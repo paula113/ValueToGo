@@ -1,5 +1,5 @@
-import React from 'react';
-import './SASS/Login.scss';
+import React from "react";
+import "./SASS/Login.scss";
 
 function Login() {
   return (
@@ -10,7 +10,6 @@ function Login() {
         <button type="submit">Login</button>
       </form>
     </main>
-
   );
 }
 
