@@ -6,7 +6,6 @@ import Gerente from './Views/Gerente';
 import Socio from './Views/Socio';
 import Client from './Views/Client';
 import Login from './Views/Login';
-import './App.scss';
 
 function App() {
   return (
