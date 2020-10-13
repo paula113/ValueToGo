@@ -13,6 +13,12 @@ function Socio() {
     if (excelFile) {
       readXlsxFile(excelFile, { sheet: 'Sheet1' }).then((data) => {
         console.log(data);// LOGUEA LA DATA
+        // console.log();
+        const puntoDeControl = {};
+        // data.filter((row) => [...row[0]])
+      //  console.log(data.map((row) => ({
+      //     id: row[5],
+      //   })));
         // data.reduce((accumulator, currentValue) => {
 
         //   console.log(currentValue.filter((item) => item != null));
@@ -23,8 +29,8 @@ function Socio() {
   };
   return (
     <>
-      <nav>Nav Bar</nav>
-      <h1>Socio == Senior</h1>
+      {/* <nav>Nav Bar</nav> */}
+      <h1>PwC</h1>
       <form>
         <input
           accept=".xlsx"
