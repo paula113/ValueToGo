@@ -3,6 +3,7 @@ import readXlsxFile from 'read-excel-file';
 import schema from '../API/schema';
 
 function Socio() {
+
   const [excelFile, setExcelFile] = useState();
   const [dataExel, setDataExel] = useState({
     Name: '',
