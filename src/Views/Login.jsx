@@ -10,39 +10,37 @@ const Login = () => {
   const history = useHistory();
   const [view, setView] = useState();
   const [email, setEmail] = useState('');
+
   const [password, setPassword] = useState('');
 
   const loginSubmit = (event) => {
     event.preventDefault();
     switch (view) {
       case 'col-price':
-        return signIn(email, password)
+        signIn(email, password)
           .then(() => {
             localStorage.clear();
             localStorage.setItem('user', email);
-            return history.push('/gerente');
+            history.push('/gerente');
           })
           .catch((err) => console.log(err));
-
+        break;
       case 'client':
-        return signIn(email, password)
+        signIn(email, password)
           .then(() => {
             localStorage.clear();
             localStorage.setItem('user', email);
-            return history.push('/client');
+            history.push('/client');
           })
           .catch((err) => console.log(err));
+        break;
       default:
+        return null;
     }
   };
-
   return (
     <main>
-      <form
-        action=""
-        className=""
-        onSubmit={(event) => loginSubmit(event)}
-      >
+      <form action="" className="" onSubmit={loginSubmit}>
         <div className="user-role">
           <button
             className="user-button"
