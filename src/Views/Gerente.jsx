@@ -1,8 +1,12 @@
 import React from 'react';
+import Export from './ExportPPT';
 
 function Gerente() {
   return (
-    <h1>Gerente</h1>
+    <div>
+      <h1>Gerente</h1>
+      <Export />
+    </div>
   );
 }
 
