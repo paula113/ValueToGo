@@ -7,6 +7,7 @@ const Login = () => {
   const history = useHistory();
   const [view, setView] = useState();
   const [email, setEmail] = useState('');
+
   const [password, setPassword] = useState('');
 
   const loginSubmit = (event) => {
