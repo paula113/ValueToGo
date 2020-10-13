@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import readXlsxFile from 'read-excel-file';
+// import readXlsxFile from 'read-excel-file';
 import schema from '../API/schema';
 
 function Socio() {
@@ -10,16 +10,16 @@ function Socio() {
   });
   const handleClick = (e) => {
     e.preventDefault();
-    if (excelFile) {
-      readXlsxFile(excelFile, { sheet: 'Sheet1' }).then((data) => {
-        console.log(data);// LOGUEA LA DATA
-        // data.reduce((accumulator, currentValue) => {
+    // if (excelFile) {
+    //   readXlsxFile(excelFile, { sheet: 'Sheet1' }).then((data) => {
+    //     console.log(data);// LOGUEA LA DATA
+    //     // data.reduce((accumulator, currentValue) => {
 
-        //   console.log(currentValue.filter((item) => item != null));
-        // });
-      })
-        .catch((err) => console.log(err));
-    }
+    //     //   console.log(currentValue.filter((item) => item != null));
+    //     // });
+    //   })
+    //     .catch((err) => console.log(err));
+    // }
   };
   return (
     <>
