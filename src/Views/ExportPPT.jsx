@@ -37,6 +37,8 @@ const optionsSlides = {
 };
 slide.addText(textSlide, optionsSlides); // solo dos parámetros
 
+pptx.layout('LAYOUT_16x9');
+
 const Export = () => {
   return (
     <div>
