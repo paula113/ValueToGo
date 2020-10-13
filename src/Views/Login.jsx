@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Login.scss';
-import { signIn } from '../API/auth';
+import {
+  signIn,
+  emailVerification,
+} from '../API/auth';
 
 const Login = () => {
   const history = useHistory();
