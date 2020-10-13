@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin direccionFlex ($direccion) {
+display: flex;
+justify-content: space-between;
+flex-direction: $direccion;
+}
