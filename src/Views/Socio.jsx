@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import readXlsxFile from 'read-excel-file';
+import readXlsxFile from 'read-excel-file';
 import schema from '../API/schema';
 
 function Socio() {
