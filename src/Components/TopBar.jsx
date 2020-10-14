@@ -1,33 +1,30 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
+import './TopBar.scss';
+// import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
 import { AccountCircle, Notifications } from '@material-ui/icons';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import plataform from '../Assets/Platform.svg';
 
 function TopBar() {
+  console.log(plataform);
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Value to go
-          </Typography>
-          <IconButton aria-label="show 17 new notifications" color="inherit">
-            <Badge badgeContent={17} color="secondary">
-              <Notifications />
-            </Badge>
-          </IconButton>
-          <IconButton
-            edge="end"
-            aria-label="account of current user"
-            // aria-controls={menuId}
-            aria-haspopup="true"
-            // onClick={handleProfileMenuOpen}
-            color="inherit"
-          >
-            <AccountCircle />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <header>
+      <nav className="topbar-nav">
+        <div className="topbar-nav-name">
+          <img src={plataform} alt="logo" />
+          <div>
+            <h2>Value To Go</h2>
+            <span>|</span>
+            <h4>PwC Perú</h4>
+          </div>
+        </div>
+        <div className="topbar-nav-icons">
+          <Notifications className="nav-icons" />
+          <AccountCircle className="nav-icons" />
+          <ExitToAppIcon className="nav-icons" />
+        </div>
+      </nav>
+    </header>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'; // { useState, useEffect }
+import React, { useState, useEffect } from 'react'; // { useState, useEffect }
 import {
   Paper,
   Table,
@@ -9,20 +9,12 @@ import {
   TableRow,
 } from '@material-ui/core/';
 // import data from '../API/data';
-// import {
-//   sendCCI,
-//   getADocument,
-//   updateCCI,
-//   getAllDocuments,
-//   listenAllDocs,
-// } from '../API/crud';
-// import firebase from '../firebase.config';
 import Badge from './Badge';
 import './ClientTable.scss';
 
-function ClientTable() {
-  // const [rowData, setRowData] = useState([]);
-
+function ClientTable(props) {
+  const { data } = props;
+  // console.log(data.filter((obj) => ));
   const rowData = [
     {
       title:
@@ -79,18 +71,6 @@ function ClientTable() {
     },
   ];
 
-  // useEffect(() => {
-  //   firebase
-  //     .firestore()
-  //     .collection('puntosDeControl')
-  //     .onSnapshot((doc) => {
-  //       const dataArr = doc.docs.map((listTable) => ({
-  //         id: listTable.id,
-  //         ...listTable.data(),
-  //       }));
-  //       setRowData(dataArr);
-  //     });
-  // }, []);
   const headerColumn = [
     {
       id: '01',
@@ -134,18 +114,21 @@ function ClientTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rowData.map((row) => (
-              <TableRow key={row.id}>
+            {data.map((row) => (
+              <TableRow key={row.id} row={row}>
                 <TableCell>
                   <Badge name={row.status} className={row.status} />
                 </TableCell>
+
                 <TableCell>{row.title}</TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.fsli}</TableCell>
                 <TableCell>{row.auditUnit}</TableCell>
                 <TableCell>{row.finalConclusionOnSeverity}</TableCell>
                 <TableCell>
-                  <button type="button">{row.recomendation}</button>
+                  <button type="button" onClick={console.log(row)}>
+                    Ver Recomendaciones
+                  </button>
                 </TableCell>
               </TableRow>
             ))}

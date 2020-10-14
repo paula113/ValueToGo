@@ -62,7 +62,7 @@ const Login = () => {
     }
   };
   return (
-    <main>
+    <main className="login-main">
       <form action="" className="" onSubmit={loginSubmit}>
         <div className="user-role">
           <button

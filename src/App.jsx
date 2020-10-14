@@ -42,7 +42,7 @@ function NonLoggedInRoute({ children, isUserLoggedIn, ...rest }) {
 
 function App() {
   // valor inicial de isUserLoggedIn es false
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
         setIsUserLoggedIn(true);
         console.log('logeado');
       } else {
-        setIsUserLoggedIn(true); // cambiar a false
+        setIsUserLoggedIn(false); // cambiar a false
         console.log('no está logueado');
       }
       setLoading(false);
