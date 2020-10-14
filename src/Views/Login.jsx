@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+// import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
 // import FormControl from '@material-ui/core/FormControl';
 import './Login.scss';
 import { signIn } from '../API/auth';
@@ -10,8 +14,27 @@ const Login = () => {
   const history = useHistory();
   const [view, setView] = useState();
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
+
+  const [empresas, setEmpresas] = React.useState('EUR');
+  const handleChange = (event) => {
+    setEmpresas(event.target.value);
+  };
+
+  const empresa = [
+    {
+      value: 'EmpresaA',
+      label: 'Empresa A',
+    },
+    {
+      value: 'EmpresaB',
+      label: 'Empresa B',
+    },
+    {
+      value: 'EmpresaC',
+      label: 'Empresa C',
+    },
+  ];
 
   const loginSubmit = (event) => {
     event.preventDefault();
@@ -58,24 +81,32 @@ const Login = () => {
           </button>
         </div>
 
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          // open={open}
-          // onClose={handleClose}
-          // onOpen={handleOpen}
-          // value={age}
-          // onChange={handleChange}
+        <TextField
+          id="standard-select-currency"
+          select
+          label="Empresa"
+          value={empresas}
+          onChange={handleChange}
+          helperText="Seleciona Empresa"
         >
-          <MenuItem value="">
-            <em>Empresa</em>
-          </MenuItem>
-          <MenuItem value="EmpresaA">Empresa A</MenuItem>
-          <MenuItem value="EmpresaB">Empresa B</MenuItem>
-          <MenuItem value="EmpresaC">Empresa C</MenuItem>
-        </Select>
-        <input
+          {empresa.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <TextField
+          id="standard-basic"
+          label="Email"
           onChange={(e) => setEmail(e.target.value)}
+        />
+        <TextField
+          id="standard-basic"
+          label="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {/* <input
+          onChange={}
           type="email"
           name="email"
           placeholder="Email"
@@ -85,7 +116,7 @@ const Login = () => {
           type="password"
           name="passsword"
           placeholder="Password"
-        />
+        /> */}
         <button type="submit">Login</button>
       </form>
     </main>
