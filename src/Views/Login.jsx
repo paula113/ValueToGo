@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/FormControl';
 import './Login.scss';
 import { signIn } from '../API/auth';
 
@@ -54,6 +57,23 @@ const Login = () => {
             Cliente
           </button>
         </div>
+
+        <Select
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          // open={open}
+          // onClose={handleClose}
+          // onOpen={handleOpen}
+          // value={age}
+          // onChange={handleChange}
+        >
+          <MenuItem value="">
+            <em>Empresa</em>
+          </MenuItem>
+          <MenuItem value="EmpresaA">Empresa A</MenuItem>
+          <MenuItem value="EmpresaB">Empresa B</MenuItem>
+          <MenuItem value="EmpresaC">Empresa C</MenuItem>
+        </Select>
         <input
           onChange={(e) => setEmail(e.target.value)}
           type="email"
