@@ -16,11 +16,14 @@ function Socio() {
           // console.log();
           const puntoDeControl = {};
           // data.filter((row) => [...row[0]])
-          console.log(
-            data.map((row) => ({
-              id: row[5],
-            })),
-          );
+          const arrayObject = data.map((item) => {
+            return { ...item };
+          });
+          // const formato = data.forEach((el) => {
+          //   const
+          //   e
+          // });
+          console.log(arrayObject);
           // data.reduce((accumulator, currentValue) => {
 
           //   console.log(currentValue.filter((item) => item != null));
