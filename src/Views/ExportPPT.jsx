@@ -3,7 +3,8 @@ import pptxgen from 'pptxgenjs';
 import imagePpt from '../images/pwc-ppt.png';
 
 const cciMock = {
-  summary: 'Hemos incluido en la página siguiente, para su conveniencia, un cuadro que resume nuestros hallazgos de las deficiencias identificadas en el sistema de control interno de la Compañía durante el proceso de auditoría del año 2018 y que se detalla en la sección 2. Estos cuadros brindarán una comprensión rápida e integral de nuestra perspectiva sobre los temas identificados y la evaluación del impacto de dichas situaciones sobre las operaciones de la Compañía. En la sección 2 incluimos también algunos aspectos que consideramos de interés relevante para la Compañía en su constante búsqueda de fortalecimiento de sus controles internos.',
+  summary:
+    'Hemos incluido en la página siguiente, para su conveniencia, un cuadro que resume nuestros hallazgos de las deficiencias identificadas en el sistema de control interno de la Compañía durante el proceso de auditoría del año 2018 y que se detalla en la sección 2. Estos cuadros brindarán una comprensión rápida e integral de nuestra perspectiva sobre los temas identificados y la evaluación del impacto de dichas situaciones sobre las operaciones de la Compañía. En la sección 2 incluimos también algunos aspectos que consideramos de interés relevante para la Compañía en su constante búsqueda de fortalecimiento de sus controles internos.',
   year: 2018,
   highDeficiencies: [
     'Afecta la eficiencia y operatividad de la Compañía.',
@@ -19,9 +20,7 @@ const cciMock = {
     'Incumplimiento de las normas internas de la Compañía.',
     'Los procedimientos no se encuentran adecuadamente formalizados.',
   ],
-  mediumDeficiencies: [
-    'Mejora del procedimiento de control existente.',
-  ],
+  mediumDeficiencies: ['Mejora del procedimiento de control existente.'],
 };
 
 // 1. Create a new Presentation
@@ -34,25 +33,39 @@ pptx.defineSlideMaster({
   objects: [
     {
       line: {
-        x: 3.5, y: 1.0, w: 6.0, line: { color: '0088CC', width: 5 },
+        x: 3.5,
+        y: 1.0,
+        w: 6.0,
+        line: { color: '0088CC', width: 5 },
       },
     },
     {
       rect: {
-        x: 0.0, y: 5.3, w: '100%', h: 0.75, fill: { color: 'F1F1F1' },
+        x: 0.0,
+        y: 5.3,
+        w: '100%',
+        h: 0.75,
+        fill: { color: 'F1F1F1' },
       },
     },
     {
       text: {
         text: 'Status Report',
         options: {
-          x: 3.0, y: 5.3, w: 5.5, h: 0.75,
+          x: 3.0,
+          y: 5.3,
+          w: 5.5,
+          h: 0.75,
         },
       },
     },
     {
       image: {
-        x: 11.3, y: 6.4, w: 1.67, h: 0.75, path: { imagePpt },
+        x: 11.3,
+        y: 6.4,
+        w: 1.67,
+        h: 0.75,
+        path: { imagePpt },
       },
     },
   ],
