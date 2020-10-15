@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import MainLayout from './Components/layout/MainLayout';
 import Loader from './Components/Loader';
-
+import Recomendation from './Views/Recomendation';
 import Gerente from './Views/Gerente';
 import Socio from './Views/Socio';
 import Client from './Views/Client';
@@ -34,7 +34,7 @@ function NonLoggedInRoute({ children, isUserLoggedIn, ...rest }) {
         if (!isUserLoggedIn) {
           return <>{children}</>;
         }
-        return <Redirect to="/client" />;
+        return <Redirect to="/cliente/recomendaciones" />;
       }}
     />
   );
@@ -59,15 +59,42 @@ function App() {
   }, []);
 
   if (loading) return <Loader />;
-
   return (
     <Router>
       <Switch>
         <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/">
           <Login />
         </NonLoggedInRoute>
-        <LoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/client">
+        <LoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/cliente">
           <Client />
+        </LoggedInRoute>
+        <LoggedInRoute
+          isUserLoggedIn={isUserLoggedIn}
+          exact
+          path="/cliente/recomendaciones"
+        >
+          <Client />
+        </LoggedInRoute>
+        <LoggedInRoute
+          isUserLoggedIn={isUserLoggedIn}
+          exact
+          path="/cliente/dashboard"
+        >
+          <Client />
+        </LoggedInRoute>
+        <LoggedInRoute
+          isUserLoggedIn={isUserLoggedIn}
+          exact
+          path="/cliente/reportes"
+        >
+          <Client />
+        </LoggedInRoute>
+        <LoggedInRoute
+          isUserLoggedIn={isUserLoggedIn}
+          exact
+          path="/cliente/recomendaciones:id"
+        >
+          <Recomendation />
         </LoggedInRoute>
         <LoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/socio">
           <Socio />

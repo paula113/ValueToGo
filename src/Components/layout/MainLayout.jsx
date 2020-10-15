@@ -7,7 +7,6 @@ function MainLayout({ children }) {
   return (
     <>
       <TopBar />
-      <div>topBar</div>
       <div>{children}</div>
       {/* <MobileBar /> */}
     </>

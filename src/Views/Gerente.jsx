@@ -5,6 +5,10 @@ function Gerente() {
   return (
     <div>
       <h1>Gerente</h1>
+      <h1>Gerente</h1>
+      <h1>Gerente</h1>
+      <h1>Gerente</h1>
+      <h1>Gerente</h1>
       <Export />
     </div>
   );
