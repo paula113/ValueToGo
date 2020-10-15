@@ -14,11 +14,11 @@ export default function RecoDetails(props) {
         }}
       >
         {/* "Empresa B2", "Empresa B4", "Empresa B5", "Empresa B3", "Empresa B1 */}
-        <option value="Empresa B1">Empresa B1</option>
-        <option value="Empresa B2">Empresa B2</option>
-        <option value="Empresa B3">Empresa B3</option>
-        <option value="Empresa B4">Empresa B3</option>
-        <option value="Empresa B5">Empresa B3</option>
+        <option value="Empresa-B1">Empresa B1</option>
+        <option value="Empresa-B2">Empresa B2</option>
+        <option value="Empresa-B3">Empresa B3</option>
+        <option value="Empresa-B4">Empresa B4</option>
+        <option value="Empresa-B5">Empresa B5</option>
       </select>
     </div>
   );

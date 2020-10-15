@@ -5,6 +5,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import DashboardContent from './DashboardContent';
 import './TabWrapper.scss';
+import Reports from './Reports';
 import ClientTable from './ClientTable';
 
 function TabPanel({ children, value, index, ...other }) {
@@ -42,7 +43,7 @@ function TabWrapper() {
       tabIndex: '2',
       route: '/cliente/reportes',
       label: 'Reportes',
-      content: <h1>reportes</h1>,
+      content: <Reports />,
     },
   ];
 
