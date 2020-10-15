@@ -11,8 +11,8 @@ import {
 import ClientTable from '../Components/ClientTable';
 
 import RecoDetails from '../Components/RecoDetails';
-// import PieChart from '../Components/PieChart';
 import firebase from '../firebase.config';
+import Reports from '../Components/Reports';
 
 function Client() {
   // sendCCI(data);
@@ -72,7 +72,7 @@ function Client() {
             </Route>
             <Route path={`${path}/Expedientes`}>
               <RecoDetails setEmpresa={setEmpresa} setStatus={setStatus} />
-              <h3>Descargas</h3>
+              <Reports />
             </Route>
           </Switch>
           {/* <RecoDetails /> */}

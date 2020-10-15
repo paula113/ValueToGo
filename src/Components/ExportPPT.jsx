@@ -1,5 +1,7 @@
 import React from 'react';
 import pptxgen from 'pptxgenjs';
+import download from '../Assets/download.svg';
+import './ExportPPT.scss';
 
 const cciMock = {
   company: 'EmpresaABC',
@@ -1118,9 +1120,14 @@ tableRecommendCci2.addTable(risk2, {
 });
 
 const Export = () => (
-  <div>
-    <button type="button" onClick={() => pptx.writeFile('CCI.pptx')}>
-      Export ppt
+  <div className="container-cci-download">
+    <span>Informe de Recomendaciones 12-2020</span>
+    <button
+      className="button-download-cci"
+      type="button"
+      onClick={() => pptx.writeFile('Informe de Recomendaciones.pptx')}
+    >
+      <img src={download} alt="descarga documento" />
     </button>
   </div>
 );
