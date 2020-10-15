@@ -20,10 +20,7 @@ function Client() {
   const [data, setData] = useState([]);
   const [empresa, setEmpresa] = useState('');
   const [status, setStatus] = useState('');
-  // const [options, setOptions] = useState('');
 
-  // console.log(empresa);
-  // console.log(status);
   useEffect(() => {
     firebase
       .firestore()
@@ -37,16 +34,6 @@ function Client() {
         setData(dataArr);
       });
   }, []);
-  if (status) {
-    // setData(() => data.filter((item) => item.status === status));
-    // const a = [];
-    // data.forEach(function (obj) {
-    //   a.push(obj.auditUnit);
-    // });
-    // console.log(newdata);
-    // console.log(data);
-  }
-  // console.log(data.map((item) => Object.values(item)));
   return (
     <main>
       <h3>Recomendaciones de Control</h3>

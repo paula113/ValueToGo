@@ -21,3 +21,20 @@
   color: $DarkBlack;
   background-color: rgb(255, 255, 255);
 }
+@mixin navBar($color, $BColor, $width) {
+  ul {
+    background-color: $BColor;
+    // width: $width;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  li {
+    list-style: none;
+    color: $color;
+    text-decoration: none;
+    padding: 1rem;
+    &:hover {
+      border-bottom: 0.2rem solid $Orange;
+    }
+  }
+}

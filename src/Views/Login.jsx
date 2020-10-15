@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-// import TextField from '@material-ui/core/TextField';
-// import FormControl from '@material-ui/core/FormControl';
 import './Login.scss';
 import { signIn } from '../API/auth';
 
