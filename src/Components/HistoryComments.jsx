@@ -3,21 +3,23 @@ import './HistoryComments.scss';
 import { validateStrings } from '../Helpers/helpers';
 
 export default function HistoryComments(props) {
-  const { commentBox } = props;
+  const { obj } = props;
+  const styleColor = localStorage.getItem('user');
   return (
-    <div className="devolver-comments">
-      {commentBox.map((obj) =>
-        Object.entries(obj).map(([keys, value]) => (
-          <div key={keys} className="details-info-obj">
-            {keys === 'cciID' || keys === 'uid' ? null : (
-              <>
-                <h5>{validateStrings(keys)}</h5>
-                <p>{value}</p>
-              </>
-            )}
-          </div>
-        )),
-      )}
-    </div>
+    <>
+      <div
+        key={obj.content}
+        className={`details-info-obj ${
+          styleColor === obj.user ? 'white' : 'yellow'
+        }`}
+      >
+        {obj.id === 'id' ? null : (
+          <>
+            <h5>{obj.user}</h5>
+            <p>{obj.content}</p>
+          </>
+        )}
+      </div>
+    </>
   );
 }

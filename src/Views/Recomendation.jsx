@@ -3,17 +3,20 @@ import { useParams } from 'react-router-dom';
 import Details from '../Components/Details';
 import Activity from '../Components/Activity';
 import Breadcrumb from '../Components/BreadCrumb';
-import { getComments, getADocument } from '../API/crud';
+import { getComments, getADocument, time } from '../API/crud';
 import './Recomendation.scss';
 
 export default function Recomendation() {
-  const initialComment = {
-    content: '',
-  };
-  const [comment, setComment] = useState(initialComment);
-  const [commentBox, setCommentBox] = useState([]);
-  useEffect(() => getComments(setCommentBox), []);
-  console.log(commentBox);
+  // const initialComment = {
+  //   content: '',
+  //   user: localStorage.getItem('user'),
+  //   // timestamp: time,
+  // };
+  // console.log(localStorage.getItem('user'));
+  // const [comment, setComment] = useState(initialComment);
+  // const [commentBox, setCommentBox] = useState([]);
+  // useEffect(() => getComments(setCommentBox), []);
+  // console.log(commentBox);
   const { id } = useParams();
   const [cci, setCci] = useState({});
 
@@ -45,11 +48,11 @@ export default function Recomendation() {
       <section className="detalle-features">
         <Details obj={cci} />
         <Activity
-          initialComment={initialComment}
-          comment={comment}
-          setComment={setComment}
-          commentBox={commentBox}
-          setCommentBox={setCommentBox}
+          // initialComment={initialComment}
+          // comment={comment}
+          // setComment={setComment}
+          // commentBox={commentBox}
+          // setCommentBox={setCommentBox}
           ccID={id}
         />
       </section>

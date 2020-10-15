@@ -1,6 +1,7 @@
 // import data from './data';
 import firebase from '../firebase.config';
 
+const time = firebase.firestore.Timestamp.fromDate(new Date());
 const publishData = (obj) =>
   firebase
     .firestore()
@@ -44,6 +45,8 @@ const getComments = (callback) =>
         const objComment = {
           content: doc.data().content,
           id: doc.id,
+          user: doc.data().user,
+          // timestamp: doc.data().timestamp,
         };
         comments.push(objComment);
       });
@@ -100,6 +103,7 @@ export {
   updateCCI,
   getAllDocuments,
   listenAllDocs,
+  time,
 };
 
 // const rowData = [
