@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';

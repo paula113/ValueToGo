@@ -38,3 +38,7 @@
     }
   }
 }
+@mixin measures($with, $height){
+  width: $with;
+  height: $height;
+}

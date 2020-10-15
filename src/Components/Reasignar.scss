@@ -1,0 +1,32 @@
+@import '../App.scss';
+@import '../variables';
+
+.submit-assignment{
+    background-color: $Orange;
+    border: none;
+    @include measures(18rem, 2rem);
+    color: $white;
+    border-radius: 3px;
+    margin-top: 2rem;
+}
+.container-assignment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    font-family: Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+.select-assignment{
+    border: 1px solid $Orange;
+    @include measures(10rem, 2rem);
+    border-radius: 3px;
+    margin: 0.5rem 0;
+}
+.input-assignment{
+    @include measures(17.4rem, 1.8rem);
+    border-radius: 3px;
+    border: 1px solid $MediumGrey;
+    margin: 0.5rem 0;
+    padding: 0 0.3rem;
+}
