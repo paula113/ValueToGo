@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';
@@ -6,7 +5,8 @@ import { createComment } from '../API/crud';
 import { uploadImagePost } from '../API/storage';
 
 export default function Devolver(props) {
-  const { initialComment, comment, setComment, commentBox, setCommentBox } = props;
+  const { initialComment, comment, setComment, commentBox } = props;
+
   const currentUserUid = localStorage.getItem('user');
   const [fileInput, setFileInput] = useState('');
   const catchComment = (e) => {

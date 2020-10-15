@@ -5,7 +5,7 @@ import HeaderNav from './HeaderNav';
 import Devolver from './Devolver';
 import Aceptar from './Aceptar';
 import Reasignar from './Reasignar';
-import { getComments, getADocument, time } from '../API/crud';
+import { getComments } from '../API/crud';
 
 export default function Activity({ ccID }) {
   const [view, setView] = useState('');
