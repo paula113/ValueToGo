@@ -21,20 +21,6 @@ export default function RecoDetails(props) {
         <option value="Empresa B4">Empresa B3</option>
         <option value="Empresa B5">Empresa B3</option>
       </select>
-      <select
-        name="empresaB"
-        id=""
-        onChange={(e) => {
-          e.preventDefault();
-          setStatus(e.currentTarget.value);
-        }}
-      >
-        {/* "Pendiente", "Rechazado", "Aceptado", "Proceso" */}
-        <option value="Pendiente">Pendientes</option>
-        <option value="Rechazado">Proceso</option>
-        <option value="Aceptado">Realizado</option>
-        <option value="Proceso">Aceptado</option>
-      </select>
     </div>
   );
 }
