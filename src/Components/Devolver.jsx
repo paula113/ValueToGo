@@ -21,11 +21,12 @@ export default function Devolver({
   };
   return (
     <div>
-      <h2>Devolver</h2>
+      {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
         <HistoryComments commentBox={commentBox} />
-        <input
-          type="text"
+        <textarea
+          id=""
+          cols="30"
           placeholder="Escribe un comentario"
           name="content"
           onChange={catchComment}

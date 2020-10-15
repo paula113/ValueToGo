@@ -12,6 +12,7 @@ export default function Activity({
   setComment,
   commentBox,
   setCommentBox,
+  ccID,
 }) {
   const [view, setView] = useState('');
   console.log(commentBox);
