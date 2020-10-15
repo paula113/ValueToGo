@@ -3,7 +3,8 @@ import './TopBar.scss';
 // import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
 import { AccountCircle, Notifications } from '@material-ui/icons';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import plataform from '../Assets/Platform.svg';
+import logo from '../Assets/Logo.svg';
+import quickValue from '../Assets/quickValue.png';
 // import { signOut } from '../API/auth';
 import { auth } from '../firebase.config';
 
@@ -21,11 +22,14 @@ function TopBar() {
     <header>
       <nav className="topbar-nav">
         <div className="topbar-nav-name">
-          <img src={plataform} alt="logo" />
-          <div>
-            <h2>Value To Go</h2>
-            <span>|</span>
-            <h4>PwC Perú</h4>
+          <img src={logo} alt="logo" className="topbar-nav-name-logo" />
+          <span>|</span>
+          <div className="topbar-nav-name-content">
+            <img
+              src={quickValue}
+              alt="logo qick value"
+              className="topbar-nav-name-content-quick"
+            />
           </div>
         </div>
         <div className="topbar-nav-icons">
