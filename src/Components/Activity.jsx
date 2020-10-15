@@ -32,9 +32,14 @@ export default function Activity({
       ) : view === 'Aceptar' ? (
         <Aceptar />
       ) : (
-        <Devolver />
+        <Devolver
+          initialComment={initialComment}
+          comment={comment}
+          setComment={setComment}
+          commentBox={commentBox}
+          setCommentBox={setCommentBox}
+        />
       )}
-      {/* <Comments /> */}
     </div>
   );
 }

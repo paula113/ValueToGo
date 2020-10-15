@@ -13,7 +13,6 @@ export default function Recomendation() {
   const [comment, setComment] = useState(initialComment);
   const [commentBox, setCommentBox] = useState([]);
   useEffect(() => getComments(setCommentBox), []);
-  console.log(commentBox);
   const { id } = useParams();
   const [cci, setCci] = useState({});
 
