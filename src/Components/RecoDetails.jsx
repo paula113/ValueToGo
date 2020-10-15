@@ -10,11 +10,6 @@ export default function RecoDetails() {
         <option value="empresaB2">Empresa B2</option>
         <option value="empresaB3">Empresa B3</option>
       </select>
-      <select name="empresaB" id="">
-        <option value="pendientes">Pendientes</option>
-        <option value="proceso">Proceso</option>
-        <option value="realizado">Realizado</option>
-      </select>
     </div>
   );
 }
