@@ -5,19 +5,14 @@ import { AccountCircle, Notifications } from '@material-ui/icons';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import logo from '../Assets/Logo.svg';
 import quickValue from '../Assets/quickValue.png';
-// import { signOut } from '../API/auth';
-import { auth } from '../firebase.config';
+import { signOut } from '../API/auth';
 
 function TopBar() {
-  const signOut = () =>
-    auth
-      .signOut()
-      .then(function () {
-        // Sign-out successful.
-      })
-      .catch(function (error) {
-        // An error happened.
-      });
+  function salir() {
+    console.log('salir');
+    signOut();
+  }
+
   return (
     <header>
       <nav className="topbar-nav">
@@ -35,7 +30,7 @@ function TopBar() {
         <div className="topbar-nav-icons">
           <Notifications className="nav-icons" />
           <AccountCircle className="nav-icons" />
-          <ExitToAppIcon className="nav-icons" onClick={console.log('salir')} />
+          <ExitToAppIcon className="nav-icons" onClick={salir} />
         </div>
       </nav>
     </header>

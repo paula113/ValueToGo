@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './HistoryComments.scss';
-import { validateStrings } from '../Helpers/helpers';
 
 export default function HistoryComments(props) {
   const { obj } = props;

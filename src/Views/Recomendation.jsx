@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Details from '../Components/Details';
 import Activity from '../Components/Activity';
 import Breadcrumb from '../Components/BreadCrumb';
-import { getADocument, time } from '../API/crud';
+import { getADocument } from '../API/crud';
 import './Recomendation.scss';
 
 export default function Recomendation() {
@@ -29,7 +29,7 @@ export default function Recomendation() {
       .catch((error) => {
         console.log('Error getting document:', error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="detalle-recomedaciones">
