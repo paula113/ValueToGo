@@ -24,7 +24,7 @@ function TabPanel({ children, value, index, ...other }) {
 function TabWrapper() {
   // const [value, setValue] = useState(1);
   const match = useRouteMatch();
-  console.log(match);
+  // console.log(match);
 
   const arrConfig = [
     {

@@ -1,23 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';
+import { createComment } from '../API/crud';
+import { uploadImagePost } from '../API/storage';
 
-export default function Devolver() {
+export default function Devolver(props) {
+  const { initialComment, comment, setComment, commentBox, setCommentBox } = props;
+  const currentUserUid = localStorage.getItem('user');
+  const [fileInput, setFileInput] = useState('');
+  const catchComment = (e) => {
+    const { name, value } = e.target;
+    setComment({ ...comment, [name]: value });
+  };
+  const sendComment = (obj) => {
+    createComment(obj);
+    setComment({ ...initialComment });
+  };
+  const handleImageUpload = (e) => {
+    const [file] = e.target.files;
+    if (file) {
+      setFileInput(file);
+    }
+  };
+
+  // console.log(commentBox);
   return (
-    <div>
-      <h2>Devolver</h2>
+    <>
+      {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
-        <HistoryComments
-          arr={[
-            {
-              cciID: '0gI0WGx6lXfyWDWcXb0L',
-              content:
-                'Recomendamos se establezca un procedimiento para informar a las entidades financieras cuando un representante legal ya no labora para la Compañía, esto con el fin de derogar los poderes que le fueron otorgados.  Asimismo, realizar las gestiones necesarias con dichas entidades para actualizar la relación de firmas autorizadas con el fin de mitigar cualquier riesgo de malversación de fondos.',
-              uid: 'nbshjb,HJDCV,JHADW',
-            },
-          ]}
-        />
+        <div className="HistoryComments-box">
+          {commentBox.map((obj) => (
+            <HistoryComments Key={obj.user} obj={obj} />
+          ))}
+        </div>
+
+        {/* <HistoryComments commentBox={commentBox} /> */}
+        <section className="devolver-chat-send">
+          <textarea
+            id=""
+            cols="30"
+            placeholder="Escribe un comentario"
+            name="content"
+            onChange={catchComment}
+          />
+          <>
+            <input type="file" onChange={handleImageUpload} />
+            {/* <input type="file" onChange={(e) => setFile(() => e.target)} /> */}
+            <button
+              type="button"
+              onClick={() => {
+                uploadImagePost(fileInput, currentUserUid);
+              }}
+            >
+              Subir
+            </button>
+          </>
+          <button type="button" onClick={() => sendComment(comment)}>
+            Enviar
+          </button>
+        </section>
       </section>
-    </div>
+    </>
   );
 }

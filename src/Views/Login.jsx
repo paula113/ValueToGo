@@ -14,9 +14,10 @@ const Login = () => {
     switch (view) {
       case 'col-price':
         signIn(email, password)
-          .then(() => {
+          .then((res) => {
             localStorage.clear();
             localStorage.setItem('user', email);
+            console.log(res);
             history.push('/gerente');
           })
           .catch((err) => console.log(err));

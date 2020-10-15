@@ -1,6 +1,7 @@
 // import data from './data';
 import firebase from '../firebase.config';
 
+const time = firebase.firestore.Timestamp.fromDate(new Date());
 const publishData = (obj) =>
   firebase
     .firestore()
@@ -22,22 +23,39 @@ const sendCCI = (arr) => {
   });
 };
 
-const getADocument = (docID) => {
-  const docRef = firebase.firestore().collection('puntosDeControl').doc(docID);
-
-  docRef
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        console.log('Document data:', doc.data());
-      } else {
-        // doc.data() will be undefined in this case
-        console.log('No such document!');
-      }
+const createComment = (obj) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    .doc()
+    .set(obj)
+    .then(() => {
+      console.log('se envio el comentario');
     })
     .catch((error) => {
-      console.log('Error getting document:', error);
+      console.log('Ocurrió un error al enviar tu comentario', error);
     });
+const getComments = (callback) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    .onSnapshot((querySnapshot) => {
+      const comments = [];
+      querySnapshot.forEach((doc) => {
+        const objComment = {
+          content: doc.data().content,
+          id: doc.id,
+          user: doc.data().user,
+          // timestamp: doc.data().timestamp,
+        };
+        comments.push(objComment);
+      });
+      callback(comments);
+    });
+
+const getADocument = (docID, collectionName) => {
+  const docRef = firebase.firestore().collection(collectionName).doc(docID);
+  return docRef.get();
 };
 const getAllDocuments = () => {
   firebase
@@ -77,7 +95,16 @@ const updateCCI = (value) => {
       console.error('Error updating document: ', error);
     });
 };
-export { sendCCI, getADocument, updateCCI, getAllDocuments, listenAllDocs };
+export {
+  sendCCI,
+  createComment,
+  getComments,
+  getADocument,
+  updateCCI,
+  getAllDocuments,
+  listenAllDocs,
+  time,
+};
 
 // const rowData = [
 //   {

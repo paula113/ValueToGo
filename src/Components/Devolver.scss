@@ -2,9 +2,34 @@
 @import '../variables';
 
 .devolver-chat {
-  background-color: $Grey;
-  margin: 1rem;
-  padding: 1rem;
-  overflow: auto;
-  height: 10rem; //
+  background-color: $BackgroundLight;
+  @include direccionFlex(column);
+  border-radius: 0.5rem;
+  .HistoryComments-box {
+    // background-color: tomato;
+    margin: 1rem;
+    overflow: auto;
+    max-height: 20rem;
+  }
+  .devolver-chat-send {
+    background-color: $BackgroundLight;
+    position: block;
+    // width: 20%;
+    z-index: 0;
+    @include direccionFlex(row);
+    textarea {
+      padding: 0.3rem;
+      border-radius: 0.5rem;
+      width: 90%;
+      margin: 1rem 0.2rem;
+      border: none;
+    }
+    button {
+      margin: 1rem 0.2rem;
+      border-radius: 100%;
+      border: none;
+      background-color: $Yellow;
+      padding: 0.3rem;
+    }
+  }
 }
