@@ -13,6 +13,9 @@ export default function Recomendation() {
   const [cci, setCci] = useState({});
 
   useEffect(() => {
+    console.log(
+      'esta es la vista de recomendacion, incluir los componentes aquí, por favor. grcias <3',
+    );
     const cciID = id.split('').slice(1).join('');
     console.log(cciID);
     getADocument(cciID, 'puntosDeControl')
@@ -29,9 +32,7 @@ export default function Recomendation() {
         console.log('Error getting document:', error);
       });
   }, []);
-  console.log(
-    'esta es la vista de recomendacion, incluir los componentes aquí, por favor. grcias <3',
-  );
+
   return (
     <div className="detalle-recomedaciones">
       <Breadcrumb />
