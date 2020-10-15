@@ -1,0 +1,13 @@
+@import '../variables';
+@import '../App.scss';
+
+.breadcrumb {
+  padding: 1rem;
+  list-style: none;
+  li {
+    display: inline;
+    font-size: 0.7rem;
+    margin: 0.3rem;
+    color: $MediumGrey;
+  }
+}

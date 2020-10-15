@@ -1,8 +1,11 @@
 @import '../App.scss';
+@import '../variables';
 
 .login-main {
   height: 100vh;
   background: #e5e5e5;
+  position: relative;
+  z-index: 3;
   form {
     @include direccionFlex(column);
     background-color: rgb(255, 255, 255);
@@ -13,9 +16,24 @@
     left: 20rem;
     margin: auto 0;
     padding: 1rem;
-
-    button {
-      @include butonRol;
+    .user-role {
+      @include direccionFlex(row);
+      button {
+        @include butonRol;
+        margin: 1rem 2rem;
+      }
+      button:hover {
+        border-bottom: 0.2rem solid $Red;
+      }
+    }
+    .Login-button {
+      background-color: $Tangarine;
+      border: none;
+      padding: 0.5rem;
+      width: 5rem;
+      margin: 1rem;
+      position: relative;
+      left: 40%;
     }
     input {
       margin: 1rem 0;
