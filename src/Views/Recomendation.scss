@@ -1,0 +1,14 @@
+@import '../variables';
+@import '../App.scss';
+
+.detalle-recomedaciones {
+  padding: 5%;
+  background-color: $LightGrey;
+  min-height: 100vh;
+
+  .detalle-features {
+    margin-top: 1rem;
+    width: 100%;
+    @include direccionFlex(row);
+  }
+}
