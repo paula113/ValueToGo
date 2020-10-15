@@ -3,10 +3,10 @@ import './HistoryComments.scss';
 import { validateStrings } from '../Helpers/helpers';
 
 export default function HistoryComments(props) {
-  const { arr } = props;
+  const { commentBox } = props;
   return (
     <div className="devolver-comments">
-      {arr.map((obj) =>
+      {commentBox.map((obj) =>
         Object.entries(obj).map(([keys, value]) => (
           <div key={keys} className="details-info-obj">
             {keys === 'cciID' || keys === 'uid' ? null : (

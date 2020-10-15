@@ -35,7 +35,7 @@ function TopBar() {
         <div className="topbar-nav-icons">
           <Notifications className="nav-icons" />
           <AccountCircle className="nav-icons" />
-          <ExitToAppIcon className="nav-icons" />
+          <ExitToAppIcon className="nav-icons" onClick={console.log('salir')} />
         </div>
       </nav>
     </header>

@@ -22,9 +22,36 @@ const sendCCI = (arr) => {
   });
 };
 
+const createComment = (obj) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    .doc()
+    .set(obj)
+    .then(() => {
+      console.log('se envio el comentario');
+    })
+    .catch((error) => {
+      console.log('Ocurrió un error al enviar tu comentario', error);
+    });
+const getComments = (callback) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    .onSnapshot((querySnapshot) => {
+      const comments = [];
+      querySnapshot.forEach((doc) => {
+        const objComment = {
+          content: doc.data().content,
+          id: doc.id,
+        };
+        comments.push(objComment);
+      });
+      callback(comments);
+    });
+
 const getADocument = (docID, collectionName) => {
   const docRef = firebase.firestore().collection(collectionName).doc(docID);
-
   return docRef.get();
 };
 const getAllDocuments = () => {
@@ -65,7 +92,15 @@ const updateCCI = (value) => {
       console.error('Error updating document: ', error);
     });
 };
-export { sendCCI, getADocument, updateCCI, getAllDocuments, listenAllDocs };
+export {
+  sendCCI,
+  createComment,
+  getComments,
+  getADocument,
+  updateCCI,
+  getAllDocuments,
+  listenAllDocs,
+};
 
 // const rowData = [
 //   {

@@ -1,27 +1,39 @@
 import React from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';
+import { createComment } from '../API/crud';
 
-export default function Devolver(props) {
-  // const { set}
+export default function Devolver({
+  initialComment,
+  comment,
+  setComment,
+  commentBox,
+  setCommentBox,
+}) {
+  console.log(commentBox);
+  const catchComment = (e) => {
+    const { name, value } = e.target;
+    setComment({ ...comment, [name]: value });
+  };
+  const sendComment = (obj) => {
+    createComment(obj);
+    setComment({ ...initialComment });
+  };
   return (
     <div>
       {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
-        <HistoryComments
-          arr={[
-            {
-              cciID: '0gI0WGx6lXfyWDWcXb0L',
-              content:
-                'Recomendamos se establezca un procedimiento para informar a las entidades financieras cuando un representante legal ya no labora para la Compañía, esto con el fin de derogar los poderes que le fueron otorgados.  Asimismo, realizar las gestiones necesarias con dichas entidades para actualizar la relación de firmas autorizadas con el fin de mitigar cualquier riesgo de malversación de fondos.',
-              uid: 'nbshjb,HJDCV,JHADW',
-            },
-          ]}
+        <HistoryComments commentBox={commentBox} />
+        <textarea
+          id=""
+          cols="30"
+          placeholder="Escribe un comentario"
+          name="content"
+          onChange={catchComment}
         />
-        <form>
-          <textarea name="" id="" cols="30" />
-          <button type="submit">Enviar</button>
-        </form>
+        <button type="button" onClick={() => sendComment(comment)}>
+          Enviar
+        </button>
       </section>
     </div>
   );
