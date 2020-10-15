@@ -18,7 +18,12 @@ function Client() {
   // sendCCI(data);
   const { path, url } = useRouteMatch();
   const [data, setData] = useState([]);
+  const [empresa, setEmpresa] = useState('');
+  const [status, setStatus] = useState('');
+  // const [options, setOptions] = useState('');
 
+  // console.log(empresa);
+  // console.log(status);
   useEffect(() => {
     firebase
       .firestore()
@@ -32,6 +37,16 @@ function Client() {
         setData(dataArr);
       });
   }, []);
+  if (status) {
+    // setData(() => data.filter((item) => item.status === status));
+    // const a = [];
+    // data.forEach(function (obj) {
+    //   a.push(obj.auditUnit);
+    // });
+    // console.log(newdata);
+    // console.log(data);
+  }
+  // console.log(data.map((item) => Object.values(item)));
   return (
     <main>
       <h3>Recomendaciones de Control</h3>
@@ -61,15 +76,15 @@ function Client() {
               renders the first one that matches the current URL. */}
           <Switch>
             <Route path={`${path}/Details`}>
-              <RecoDetails />
+              <RecoDetails setEmpresa={setEmpresa} setStatus={setStatus} />
               <ClientTable data={data} />
             </Route>
             <Route path={`${path}/Reportes`}>
-              <RecoDetails />
+              <RecoDetails setEmpresa={setEmpresa} setStatus={setStatus} />
               <h2>Chart</h2>
             </Route>
             <Route path={`${path}/Expedientes`}>
-              <RecoDetails />
+              <RecoDetails setEmpresa={setEmpresa} setStatus={setStatus} />
               <h3>Descargas</h3>
             </Route>
           </Switch>

@@ -119,7 +119,6 @@ function ClientTable(props) {
                 <TableCell>
                   <Badge name={row.status} className={row.status} />
                 </TableCell>
-
                 <TableCell>{row.title}</TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.fsli}</TableCell>

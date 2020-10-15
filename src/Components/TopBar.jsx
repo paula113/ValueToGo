@@ -4,9 +4,19 @@ import './TopBar.scss';
 import { AccountCircle, Notifications } from '@material-ui/icons';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import plataform from '../Assets/Platform.svg';
+// import { signOut } from '../API/auth';
+import { auth } from '../firebase.config';
 
 function TopBar() {
-  console.log(plataform);
+  const signOut = () =>
+    auth
+      .signOut()
+      .then(function () {
+        // Sign-out successful.
+      })
+      .catch(function (error) {
+        // An error happened.
+      });
   return (
     <header>
       <nav className="topbar-nav">
