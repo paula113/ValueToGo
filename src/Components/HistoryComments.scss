@@ -1,8 +1,25 @@
 @import '../App.scss';
 @import '../variables';
 
-.devolver-comments {
-  background-color: teal;
-  overflow: auto;
-  height: 7rem;
+.details-info-obj {
+  // overflow: auto;
+  // height: 90%;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  // height: 70%;
+  // background-color: tomato;
+  // background-color: $BackgroundLight;
+}
+// .details-info-obj {
+//   margin: 1rem;
+//   border-radius: 0.5rem;
+//   padding: 0.5rem;
+// }
+.yellow {
+  background-color: $Yellow;
+}
+.white {
+  background-color: $Tangarine;
+  color: $white;
 }

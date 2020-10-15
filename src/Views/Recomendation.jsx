@@ -3,16 +3,10 @@ import { useParams } from 'react-router-dom';
 import Details from '../Components/Details';
 import Activity from '../Components/Activity';
 import Breadcrumb from '../Components/BreadCrumb';
-import { getComments, getADocument } from '../API/crud';
+import { getADocument, time } from '../API/crud';
 import './Recomendation.scss';
 
 export default function Recomendation() {
-  const initialComment = {
-    content: '',
-  };
-  const [comment, setComment] = useState(initialComment);
-  const [commentBox, setCommentBox] = useState([]);
-  useEffect(() => getComments(setCommentBox), []);
   const { id } = useParams();
   const [cci, setCci] = useState({});
 
@@ -43,14 +37,7 @@ export default function Recomendation() {
       <p>Lee la Carta de Recomendación y responde con las siguientes acciones</p>
       <section className="detalle-features">
         <Details obj={cci} />
-        <Activity
-          initialComment={initialComment}
-          comment={comment}
-          setComment={setComment}
-          commentBox={commentBox}
-          setCommentBox={setCommentBox}
-          ccID={id}
-        />
+        <Activity ccID={id} />
       </section>
     </div>
   );
