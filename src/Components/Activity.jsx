@@ -12,12 +12,11 @@ export default function Activity({ ccID }) {
   const initialComment = {
     content: '',
     user: localStorage.getItem('user'),
-    // timestamp: time,
   };
 
   const [comment, setComment] = useState(initialComment);
   const [commentBox, setCommentBox] = useState([]);
-  useEffect(() => getComments(setCommentBox), []);
+  useEffect(() => getComments(setCommentBox, ccID), []);
   // console.log(commentBox);
   return (
     <div className="Activity">

@@ -30,8 +30,8 @@ export default function Devolver(props) {
       {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
         <div className="HistoryComments-box">
-          {commentBox.map((obj) => (
-            <HistoryComments Key={obj.user} obj={obj} />
+          {commentBox.map((obj, i) => (
+            <HistoryComments Key={`${obj.id}${i}`} obj={obj} />
           ))}
         </div>
 
