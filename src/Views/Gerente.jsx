@@ -1,5 +1,5 @@
 import React from 'react';
-import Export from './ExportPPT';
+import Export from '../Components/ExportPPT';
 
 function Gerente() {
   return (

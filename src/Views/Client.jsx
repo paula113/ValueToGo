@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Client.scss';
 import TabWrapper from '../Components/TabWrapper';
 import RecoDetails from '../Components/RecoDetails';
-// import PieChart from '../Components/PieChart';
 
 function Client() {
   return (
