@@ -21,7 +21,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-swipeable-views": "^0.13.9",
-    "read-excel-file": "^4.0.7"
+    "read-excel-file": "^4.0.7",
+    "recharts": "^1.8.5"
   },
   "scripts": {
     "start": "react-scripts start",

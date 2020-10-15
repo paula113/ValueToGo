@@ -5,7 +5,6 @@ export default function RecoDetails(props) {
   const { setEmpresa, setStatus } = props;
   return (
     <div className="detalles-de-recomendacion">
-      <h6>Detalles de recomendacion</h6>
       <select
         name="empresaB"
         id=""

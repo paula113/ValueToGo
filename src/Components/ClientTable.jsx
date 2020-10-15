@@ -9,7 +9,6 @@ import {
   TableRow,
 } from '@material-ui/core/';
 import { Link, useParams } from 'react-router-dom';
-// import data from '../API/data';
 import { listenAllDocs } from '../API/crud';
 import Badge from './Badge';
 import './ClientTable.scss';
@@ -76,7 +75,9 @@ function ClientTable() {
                 <TableCell>{row.finalConclusionOnSeverity}</TableCell>
                 <TableCell>
                   <Link to={`/cliente/recomendaciones:${row.id}`}>
-                    <button type="button">ver más</button>
+                    <button type="button" className="ver-mas">
+                      ver más
+                    </button>
                   </Link>
                 </TableCell>
               </TableRow>

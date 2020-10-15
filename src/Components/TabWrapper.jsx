@@ -3,6 +3,8 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import DashboardContent from './DashboardContent';
+import './TabWrapper.scss';
 import Reports from './Reports';
 import ClientTable from './ClientTable';
 
@@ -25,12 +27,6 @@ function TabWrapper() {
   console.log(match);
 
   const arrConfig = [
-    // {
-    //   tabIndex: '0',
-    //   route: '/cliente',
-    //   label: 'Overview',
-    //   content: <h1>OverView</h1>,
-    // },
     {
       tabIndex: '0',
       route: '/cliente/recomendaciones',
@@ -41,7 +37,7 @@ function TabWrapper() {
       tabIndex: '1',
       route: '/cliente/dashboard',
       label: 'Dashboard',
-      content: <h1>Dashboard</h1>,
+      content: <DashboardContent />,
     },
     {
       tabIndex: '2',
@@ -72,6 +68,7 @@ function TabWrapper() {
           index={tabPanel.tabIndex}
           value={obj.tabIndex}
         >
+          <p className="textp">Detalles de recomendación</p>
           {tabPanel.content}
         </TabPanel>
       ))}
