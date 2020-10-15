@@ -1,3 +1,4 @@
+@import '../variables';
 .MuiTableCell-root {
   // background-color: red;
   text-align: center;
@@ -8,10 +9,11 @@
   display: table;
   -webkit-border-vertical-spacing: 2rem;
   border-collapse: separate;
+  border: 1px solid #cdcdcd;
 }
 
-.MuiTableCell-head {
-  border: none;
+.MuiBox-root-6 {
+  padding: 24px 0 !important;
 }
 
 .MuiTableCell-head {
@@ -19,4 +21,26 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+// .MuiTableRow-head {
+//   text-align: center;
+// }
+
+.MuiTabs-scroller {
+  background: $DarkGrey;
+  color: $white;
+}
+.MuiTabs-flexContainer {
+  justify-content: space-evenly;
+}
+
+.ver-mas {
+  border: 1px solid $Orange;
+  outline: none;
+  background: transparent;
+  color: $Orange;
+  padding: 13.5px;
+  border-radius: 5px;
+  font-size: 16px;
 }
