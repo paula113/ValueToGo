@@ -22,22 +22,10 @@ const sendCCI = (arr) => {
   });
 };
 
-const getADocument = (docID) => {
-  const docRef = firebase.firestore().collection('puntosDeControl').doc(docID);
+const getADocument = (docID, collectionName) => {
+  const docRef = firebase.firestore().collection(collectionName).doc(docID);
 
-  docRef
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        console.log('Document data:', doc.data());
-      } else {
-        // doc.data() will be undefined in this case
-        console.log('No such document!');
-      }
-    })
-    .catch((error) => {
-      console.log('Error getting document:', error);
-    });
+  return docRef.get();
 };
 const getAllDocuments = () => {
   firebase

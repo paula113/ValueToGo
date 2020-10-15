@@ -2,10 +2,11 @@ import React from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';
 
-export default function Devolver() {
+export default function Devolver(props) {
+  // const { set}
   return (
     <div>
-      <h2>Devolver</h2>
+      {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
         <HistoryComments
           arr={[
@@ -17,6 +18,10 @@ export default function Devolver() {
             },
           ]}
         />
+        <form>
+          <textarea name="" id="" cols="30" />
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </div>
   );
