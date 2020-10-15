@@ -1,0 +1,7 @@
+@import '../App.scss';
+@import '../variables';
+
+.headerNav {
+  @include direccionFlex(row);
+  @include navBar($DarkBlack, $white, 10%);
+}

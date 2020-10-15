@@ -1,0 +1,12 @@
+@import '../App.scss';
+@import '../variables';
+.details-info {
+  background-color: $white;
+  margin: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  height: 25rem; //   background: gray;
+  .details-info-obj {
+    margin: 1rem;
+  }
+}

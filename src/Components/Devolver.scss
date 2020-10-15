@@ -1,0 +1,10 @@
+@import '../App.scss';
+@import '../variables';
+
+.devolver-chat {
+  background-color: $Grey;
+  margin: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  height: 10rem; //
+}

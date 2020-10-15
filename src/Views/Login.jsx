@@ -7,7 +7,6 @@ const Login = () => {
   const history = useHistory();
   const [view, setView] = useState();
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
 
   const loginSubmit = (event) => {
@@ -23,6 +22,8 @@ const Login = () => {
           .catch((err) => console.log(err));
         break;
       case 'client':
+        console.log(email);
+        console.log(password);
         signIn(email, password)
           .then(() => {
             localStorage.clear();
@@ -36,7 +37,7 @@ const Login = () => {
     }
   };
   return (
-    <main>
+    <main className="login-main">
       <form action="" className="" onSubmit={loginSubmit}>
         <div className="user-role">
           <button
@@ -66,7 +67,9 @@ const Login = () => {
           name="passsword"
           placeholder="Password"
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="Login-button">
+          Login
+        </button>
       </form>
     </main>
   );

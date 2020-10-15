@@ -7,6 +7,7 @@ export default [
     fsli: 'Share capital and other equity accounts',
     auditUnit: 'Empresa B1',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'Formalización del termino de contrato',
@@ -15,6 +16,7 @@ export default [
     fsli: 'Revenue',
     auditUnit: 'Empresa B1',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -24,6 +26,7 @@ export default [
     fsli: 'Share capital and other equity accounts',
     auditUnit: 'Empresa B2',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'Partidas conciliatorias mayores a 1 año',
@@ -32,6 +35,7 @@ export default [
     fsli: 'Cash and cash equivalents',
     auditUnit: 'Empresa B3',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -41,6 +45,7 @@ export default [
     fsli: 'Cash and cash equivalents',
     auditUnit: 'Empresa B3',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -50,6 +55,7 @@ export default [
     fsli: 'Inventory',
     auditUnit: 'Empresa B3',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -59,6 +65,7 @@ export default [
     fsli: 'Cost of sales',
     auditUnit: 'Empresa B3',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'Ingresos no realizados',
@@ -67,6 +74,7 @@ export default [
     fsli: 'Deferred and unearned revenue',
     auditUnit: 'Empresa B3',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -76,6 +84,7 @@ export default [
     fsli: 'Accounts receivable, Deferred and unearned revenue, Revenue',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -85,6 +94,7 @@ export default [
     fsli: 'Cash and cash equivalents',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'La compañia cuenta con partidas conciliatorias mayores a 360 días',
@@ -93,6 +103,7 @@ export default [
     fsli: 'Cash and cash equivalents',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'La compañia cuenta con observaciones en letras emitidas',
@@ -101,6 +112,7 @@ export default [
     fsli: 'Accounts receivable, Allowance for doubtful accounts',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -110,6 +122,7 @@ export default [
     fsli: 'Accounts payable',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -119,6 +132,7 @@ export default [
     fsli: 'Inventory',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'Ingresos no realizados',
@@ -127,6 +141,7 @@ export default [
     fsli: 'Deferred and unearned revenue',
     auditUnit: 'Empresa B4',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -136,6 +151,7 @@ export default [
     fsli: 'Accounts payable',
     auditUnit: 'Empresa B5',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'CD: No existe politica de descuentos',
@@ -144,6 +160,7 @@ export default [
     fsli: 'Accounts receivable, Deferred and unearned revenue, Revenue',
     auditUnit: 'Empresa B5',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title: 'Aprobación de los descuentos',
@@ -152,6 +169,7 @@ export default [
     fsli: 'Accounts receivable, Deferred and unearned revenue, Revenue',
     auditUnit: 'Empresa B5',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
   {
     title:
@@ -161,5 +179,6 @@ export default [
     fsli: 'Cash and cash equivalents',
     auditUnit: 'Empresa B5',
     finalConclusionOnSeverity: 'Deficiency in Internal Control',
+    status: 'Pending',
   },
 ];
