@@ -1,0 +1,41 @@
+@import '../App.scss';
+@import '../variables';
+
+header {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 8px 6px -6px $Grey;
+  z-index: 2;
+  .topbar-nav {
+    @include direccionFlex(row);
+    padding: 0.5rem;
+  }
+  .topbar-nav-name {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 1rem;
+      h2 {
+        color: $DarkGrey;
+      }
+      span {
+        font-size: 2rem;
+        margin: 0 1rem;
+        color: $MediumGrey;
+      }
+      h4 {
+        color: $MediumGrey;
+      }
+    }
+  }
+  .topbar-nav-icons {
+    .nav-icons {
+      margin: 0.5rem 1rem;
+    }
+  }
+  width: 100%;
+}

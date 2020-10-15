@@ -1,0 +1,22 @@
+.MuiTableCell-root {
+  // background-color: red;
+  text-align: center;
+}
+
+.MuiTable-root {
+  width: 100%;
+  display: table;
+  -webkit-border-vertical-spacing: 2rem;
+  border-collapse: separate;
+}
+
+.MuiTableCell-head {
+  border: none;
+}
+
+.MuiTableCell-head {
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
