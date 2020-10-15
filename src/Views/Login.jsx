@@ -53,7 +53,7 @@ const Login = () => {
           .then(() => {
             localStorage.clear();
             localStorage.setItem('user', email);
-            history.push('/client');
+            history.push('/cliente/recomendaciones');
           })
           .catch((err) => console.log(err));
         break;
