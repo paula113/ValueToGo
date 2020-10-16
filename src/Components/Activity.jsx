@@ -10,6 +10,7 @@ import { getComments } from '../API/crud';
 export default function Activity({ ccID }) {
   const [view, setView] = useState('');
   const initialComment = {
+    id: ccID,
     content: '',
     user: localStorage.getItem('user'),
   };
