@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Client.scss';
 import TabWrapper from '../Components/TabWrapper';
 import { listenAllDocs } from '../API/crud';
+import RecoDetails from '../Components/RecoDetails';
 
 function Client() {
   const [rowData, setRowData] = useState([]);
