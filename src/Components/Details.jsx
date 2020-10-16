@@ -8,16 +8,25 @@ export default function Details(props) {
 
   return (
     <div className="details-info">
-      {Object.entries(obj).map(([keys, value]) => (
-        <div key={keys} className="details-info-obj">
-          <h5>
-            {validateStrings(keys) === 'Fsli'
-              ? validateStrings('Rubro')
-              : validateStrings(keys)}
-          </h5>
-          <p>{value}</p>
-        </div>
-      ))}
+      <section className="details-info-container">
+        {Object.entries(obj).map(([keys, value]) => (
+          <div key={keys} className="details-info-obj">
+            <h5>
+              {validateStrings(keys) === 'Fsli'
+                ? validateStrings('Rubro')
+                : validateStrings(keys)}
+            </h5>
+            <p>{value}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* <section> */}
+      {/* <h6>Sustento</h6>
+        <button type="submit" onClick={() => console.log('descarga file')}>
+          Descargar Sustento
+        </button> */}
+      {/* </section> */}
     </div>
   );
 }

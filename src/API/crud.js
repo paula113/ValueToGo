@@ -1,4 +1,3 @@
-// import data from './data';
 import firebase from '../firebase.config';
 
 const time = firebase.firestore.Timestamp.fromDate(new Date());
@@ -35,20 +34,19 @@ const createComment = (obj) =>
     .catch((error) => {
       console.log('Ocurrió un error al enviar tu comentario', error);
     });
-const getComments = (callback, id) =>
+const getComments = (callback) =>
   firebase
     .firestore()
     .collection('comentarios')
-    .where('id', '==', id)
+    // .where('id', '==', id)
+    .orderBy('date', 'asc')
     .onSnapshot((querySnapshot) => {
-      console.log(id);
       const comments = [];
       querySnapshot.forEach((doc) => {
         const objComment = {
           content: doc.data().content,
-          id: doc.id,
+          id: doc.data().id,
           user: doc.data().user,
-          // timestamp: doc.data().timestamp,
         };
         comments.push(objComment);
       });

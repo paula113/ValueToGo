@@ -34,7 +34,9 @@ export default function Recomendation() {
   return (
     <div className="detalle-recomedaciones">
       <Breadcrumb />
-      <p>Lee la Carta de Recomendación y responde con las siguientes acciones</p>
+      <strong>
+        Lee la Carta de Recomendación y responde con las siguientes acciones
+      </strong>
       <section className="detalle-features">
         <Details obj={cci} />
         <Activity ccID={ccID} />
