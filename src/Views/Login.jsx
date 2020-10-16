@@ -12,6 +12,16 @@ const Login = () => {
   const [view, setView] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [disabled, setDisabled] = useState(true);
+
+  function handleChange(e) {
+    setPassword(e.target.value);
+    if (e.target.value.length > 4) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }
 
   const loginSubmit = (event) => {
     event.preventDefault();
@@ -56,7 +66,7 @@ const Login = () => {
               type="button"
               onClick={() => setView('col-price')}
             >
-              Price
+              PwC
             </button>
             <button
               className="user-button"
@@ -68,7 +78,7 @@ const Login = () => {
           </div>
           <div className="container-form">
             <label htmlFor="email">
-              <p>Correo</p>
+              <p className="text-label">Correo</p>
               <input
                 className="input-form"
                 onChange={(e) => setEmail(e.target.value)}
@@ -78,17 +88,17 @@ const Login = () => {
               />
             </label>
             <label htmlFor="password">
-              <p>Password</p>
+              <p className="text-label">Password</p>
 
               <input
                 className="input-form"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
                 type="password"
                 name="passsword"
                 placeholder="password"
               />
             </label>
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-button" disabled={disabled}>
               Ingresar
             </button>
             <Link to="">Olvidé mi contraseña</Link>
