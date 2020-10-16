@@ -8,6 +8,7 @@ export default function Details(props) {
 
   return (
     <div className="details-info">
+      <div className="details-info-title">Carta de Recomendación</div>
       <section className="details-info-container">
         <div className="details-info-obj">
           <h5>Title</h5>
