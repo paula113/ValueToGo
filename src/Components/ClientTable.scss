@@ -48,9 +48,14 @@
 }
 
 .detalles-de-recomendacion {
-  //   background-color: royalblue;
+  background: transparent;
   padding: 1rem;
   select {
+    font-size: 16px;
+    outline: nonetab;
+    color: #d04a02;
+    border: 1.5px solid #d04a02;
+    border-radius: 5px;
     //   height: ;
     padding: 0.5rem;
     margin: 0.5rem;
