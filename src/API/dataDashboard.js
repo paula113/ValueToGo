@@ -5,9 +5,16 @@ const dataFsli = [
     name: 'Payable',
     Total: 1,
   },
-
+  {
+    name: 'Received',
+    Total: 1,
+  },
   {
     name: 'Accruals',
+    Total: 1,
+  },
+  {
+    name: 'Cash',
     Total: 1,
   },
   {
@@ -20,10 +27,6 @@ const dataFsli = [
   },
   {
     name: 'Notes',
-    Total: 1,
-  },
-  {
-    name: 'Activities',
     Total: 1,
   },
   {
@@ -43,8 +46,5 @@ const dataPieChart = [
   { name: 'Rechazado', value: 8 },
 ];
 
-const dataPieDeficiency = [
-  { name: 'Deficiency internal control ', value: 500 },
-  { name: 'Suma Total ', value: 500 },
-];
+const dataPieDeficiency = [{ name: 'Deficiency internal control ', value: 1000 }];
 export { dataFsli, dataPieDeficiency, dataPieChart };
