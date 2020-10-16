@@ -11,6 +11,10 @@
 button{
   cursor: pointer;
 }
+.details-info-title{
+  border-bottom: 1.5px solid #d04a02;
+  padding-bottom: 3px;
+}
 @mixin direccionFlex($direccion) {
   display: flex;
   justify-content: space-between;

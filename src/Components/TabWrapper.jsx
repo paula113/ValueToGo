@@ -33,18 +33,21 @@ function TabWrapper(props) {
       route: '/cliente/recomendaciones',
       label: 'Recomendaciones',
       content: <ClientTable rowData={rowData} />,
+      title: 'Detalles de Recomendaciones',
     },
     {
       tabIndex: '1',
       route: '/cliente/dashboard',
       label: 'Dashboard',
       content: <DashboardContent />,
+      title: 'Métricas',
     },
     {
       tabIndex: '2',
       route: '/cliente/reportes',
       label: 'Reportes',
       content: <Reports />,
+      title: 'Módulo de Reportes',
     },
   ];
 
@@ -59,6 +62,7 @@ function TabWrapper(props) {
             label={tab.label}
             value={tab.tabIndex}
             component={Link}
+            title={tab.title}
             to={tab.route}
           />
         ))}
@@ -69,7 +73,7 @@ function TabWrapper(props) {
           index={tabPanel.tabIndex}
           value={obj.tabIndex}
         >
-          <p className="textp">Detalles de recomendación</p>
+          <p className="textp">{tabPanel.title}</p>
           {tabPanel.content}
         </TabPanel>
       ))}
