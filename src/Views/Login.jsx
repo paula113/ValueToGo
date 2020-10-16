@@ -53,7 +53,7 @@ const Login = () => {
   };
   return (
     <main className="login-main">
-      <Container maxWidth="md">
+      {/* <Container maxWidth="md"> */}
         <form action="" className="form-login" onSubmit={loginSubmit}>
           <div className="content-logo">
             <img className="logo-image" src={logoQuick} alt="Logo de Quick value" />
@@ -105,7 +105,7 @@ const Login = () => {
             <Link to="">Olvidé mi contraseña</Link>
           </div>
         </form>
-      </Container>
+      {/* </Container> */}
     </main>
   );
 };

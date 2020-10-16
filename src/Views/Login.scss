@@ -4,7 +4,7 @@
 .login-main {
   background-color: $BackgroundLight;
   height: 100vh;
-  .MuiContainer-root {
+  // .MuiContainer-root {
     width: 45rem;
     border: 2px solid $BorderForm;
     border-radius: 11px;
@@ -102,7 +102,7 @@
         }
       }
     }
-  }
+  // }
 }
 
 // .login-main {
