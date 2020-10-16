@@ -27,7 +27,7 @@ const cciMock = {
       description:
         'Durante nuestra auditoría, identificamos que la Compañía tiene pendiente de actualizar la relación de firmas autorizadas ante las entidades financieras.  Al respecto, las dichas entidades reportaron directamente a nosotros algunos firmantes autorizados que no aparecen en el listado operativo de representantes autorizados vigente de la Compañía.  Esta situación expone a la Compañía al riesgo de posible malversación de sus cuentas corrientes.',
       rubro: 'Efectivo y equivalente de efectivo',
-      ejemplo:
+      example:
         '* En el caso de ABC S.A.A., tenemos: Pedro Ventura y Angélica Zacarias (empleado) y Patricia Echevarria ( ex empleado)',
       company: '',
       level: 'Medio',
@@ -42,7 +42,7 @@ const cciMock = {
       description:
         'Durante nuestra auditoría, identificamos que la Compañía no realiza una oportuna conciliación entre la información del área de Créditos y Cobranzas referente a los saldos de las cuentas por cobrar comerciales y la data registrada por el área de Contabilidad; está última presenta un saldo mayor al que reporta el área operativa.  Esta situación expone a la Compañía al riesgo de no llevar un control adecuado de la incobrabilidad de la cartera que mantiene la Compañía en sus estados financieros.',
       rubro: 'Cuentas por cobrar comerciales',
-      ejemplo:
+      example:
         'Por ejemplo, se identificaron los siguientes casos de diferencias: * Cliente A por S/200,000 * Cliente B por S/150,000',
       company: '',
       level: 'Alto',
@@ -196,6 +196,8 @@ const introIndex = [
   `Deficiencias de control identificadas en (rubro ${cciMock.deficiences[0].rubro})`,
   '3.',
   `Deficiencias de control identificadas en (rubro ${cciMock.deficiences[1].rubro})`,
+  '4.',
+  `Deficiencias de control identificadas en (rubro ${cciMock.deficiences[2].rubro})`,
 ];
 const titleDeficiencies = `Deficiencias de control identificadas durante la auditoría del año ${cciMock.year}`;
 
@@ -387,6 +389,47 @@ pptx.defineSlideMaster({
     },
   ],
 });
+
+// slide10
+pptx.defineSlideMaster({
+  title: 'MASTER_SLIDE10',
+  background: { fill: 'EB8C00' },
+  objects: [
+    {
+      text: {
+        text: introIndex[6],
+        options: {
+          x: 0.5,
+          y: '20%',
+          w: '50%',
+          aling: 'center',
+          fontFace: 'Georgia',
+          fontSize: 167,
+          italic: true,
+          bold: true,
+          color: 'F1F1F1',
+        },
+      },
+    },
+    {
+      text: {
+        text: introIndex[7],
+        options: {
+          x: 0.5,
+          y: '50%',
+          w: '80%',
+          aling: 'center',
+          fontFace: 'Georgia',
+          fontSize: 32,
+          italic: true,
+          bold: true,
+          color: 'F1F1F1',
+        },
+      },
+    },
+  ],
+});
+
 // slide4
 pptx.defineSlideMaster({
   title: 'MASTER_SLIDE4',
@@ -483,8 +526,9 @@ pptx.defineSlideMaster({
   title: 'MASTER_SLIDE5',
   background: { fill: 'F1F1F1' },
 });
+// SLIDE FINAL 12
 pptx.defineSlideMaster({
-  title: 'MASTER_SLIDE10',
+  title: 'MASTER_SLIDE12',
   objects: [
     {
       text: {
@@ -521,7 +565,7 @@ pptx.defineSlideMaster({
     },
   ],
 });
-// 2. Add a Slide
+// Manejo del contenido de los slides
 pptx.addSlide({ masterName: 'MASTER_SLIDE' });
 pptx.addSlide({ masterName: 'MASTER_SLIDE2' });
 pptx.addSlide({ masterName: 'MASTER_SLIDE3' });
@@ -532,6 +576,8 @@ const tableRecommendCci1 = pptx.addSlide({ masterName: 'MASTER_SLIDE7' });
 pptx.addSlide({ masterName: 'MASTER_SLIDE8' });
 const tableRecommendCci2 = pptx.addSlide({ masterName: 'MASTER_SLIDE9' });
 pptx.addSlide({ masterName: 'MASTER_SLIDE10' });
+const tableRecommendCci3 = pptx.addSlide({ masterName: 'MASTER_SLIDE11' });
+pptx.addSlide({ masterName: 'MASTER_SLIDE12' });
 
 // AGREGAR TEXTO RESUMEN A SLIDE 4
 slide4.addText(
@@ -1110,6 +1156,151 @@ const risk2 = [
   ],
 ];
 tableRecommendCci2.addTable(risk2, {
+  x: 0.5,
+  y: '80%',
+  w: 9,
+  h: 0.3,
+  colW: 2,
+  rowH: 0.3,
+  border: { type: 'solid' },
+});
+
+// CCI3
+const subject3 = [
+  [
+    {
+      text: 'Asunto',
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        colspan: 6,
+        rowH: 0.5,
+        fill: { color: 'EB8C00' },
+      },
+    },
+    {
+      text: 'Recomendación',
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        colspan: 2,
+        rowH: 0.5,
+        fill: { color: 'EB8C00' },
+      },
+    },
+  ],
+  [
+    {
+      text: cciMock.deficiences[2].description,
+      options: {
+        align: 'center',
+        fontFace: 'Georgia',
+        rowspan: 3,
+        colspan: 3,
+        rowH: 0.5,
+      },
+    },
+    {
+      text: cciMock.deficiences[2].example,
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        rowspan: 3,
+        colspan: 3,
+        rowH: 0.5,
+      },
+    },
+    {
+      text: cciMock.deficiences[2].recommendation,
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        rowspan: 3,
+        colspan: 2,
+        rowH: 0.5,
+      },
+    },
+  ],
+];
+tableRecommendCci3.addText(introIndex[7], {
+  x: 0.5,
+  y: '10%',
+  w: '80%',
+  aling: 'center',
+  fontFace: 'Georgia',
+  fontSize: 10,
+  italic: true,
+  bold: true,
+  color: '000000',
+});
+tableRecommendCci3.addText(cciMock.deficiences[2].title, {
+  x: 0.5,
+  y: '20%',
+  w: '80%',
+  aling: 'center',
+  fontFace: 'Georgia',
+  fontSize: 12,
+  italic: false,
+  bold: true,
+  color: 'EB8C00',
+});
+tableRecommendCci3.addTable(subject3, {
+  x: 0.5,
+  y: '25%',
+  w: '70%',
+  h: 0.3,
+  colW: 1,
+  rowH: 0.3,
+  border: { type: 'solid' },
+});
+
+const risk3 = [
+  [
+    {
+      text: 'Riesgo',
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        colspan: 2,
+        rowH: 0.5,
+        fill: { color: 'EB8C00' },
+      },
+    },
+    {
+      text: 'Respuesta de la Gerencia',
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        colspan: 2,
+        rowH: 0.5,
+        fill: { color: 'EB8C00' },
+      },
+    },
+  ],
+  [
+    {
+      text: cciMock.deficiences[2].level,
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        rowspan: 3,
+        colspan: 2,
+        rowH: 0.5,
+      },
+    },
+    {
+      text: cciMock.deficiences[2].answer,
+      options: {
+        align: 'left',
+        fontFace: 'Georgia',
+        rowspan: 3,
+        colspan: 2,
+        rowH: 0.5,
+      },
+    },
+  ],
+];
+tableRecommendCci3.addTable(risk3, {
   x: 0.5,
   y: '80%',
   w: 9,
