@@ -1,20 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './ModalAccepted.scss';
 
-const BuyModal = ({ isShowingg, hiden }) =>
+const BuyModal = ({ isShowingg, hide }) =>
   isShowingg
     ? ReactDOM.createPortal(
         <div>
           <div className="modal-overlay" />
-          <div className="buy-modal-wrapper">
-            <div className="buy-modal flex column">
-              <span className="buy-span">¡Gracias!</span>
-              <span className="buy-span-x">Tu recomendación fue aceptada.</span>
-              <button
-                className="button-modal-complete"
-                type="button"
-                onClick={hiden}
-              >
+          <div className="little-modal-wrapper">
+            <div className="little-modal">
+              <span className="little-span">¡Gracias!</span>
+              <span className="little-span">Tu recomendación fue aceptada.</span>
+              <button className="button-modal-complete" type="button" onClick={hide}>
                 Aceptar
               </button>
             </div>

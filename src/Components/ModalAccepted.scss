@@ -1,7 +1,7 @@
 @import '../App.scss';
 @import '../variables';
 
-.buy-modal-wrapper {
+.little-modal-wrapper {
     position: fixed;
     top: 8rem;
     left: 0;
@@ -12,7 +12,7 @@
     overflow-y: auto;
     outline: 0;
   }
-.buy-modal{
+.little-modal{
     z-index: 100;
     background: white;
     position: relative;
@@ -20,24 +20,19 @@
     border-radius: 3px;
     max-width: 270px;
     height: 270px;
-    justify-content: center;
     align-items: center;
+    @include direccionFlex(column);
+    justify-content: center;
 }
-// .buy-span{
-//     font-size: 13px;
-//     font-weight: bold;
-// }
-// .buy-span-x{
-//     font-family: $nunito;
-//     font-size: 14px;
-//     padding: 5px;
+.little-span{
+    margin-bottom: 0.8rem;
+}
 
-// }
 .button-modal-complete{
     width: 100px;
     height: 40px;
     border:none;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: $Orange;
     color: $white;
     margin-top: 15px;
