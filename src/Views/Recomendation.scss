@@ -2,10 +2,13 @@
 @import '../App.scss';
 
 .detalle-recomedaciones {
-  padding: 2%;
-  background-color: $LightGrey;
+  padding-top: 10%;
   min-height: 100vh;
 
+  strong {
+    display: block;
+    margin: 1rem;
+  }
   .detalle-features {
     margin-top: 1rem;
     width: 100%;
