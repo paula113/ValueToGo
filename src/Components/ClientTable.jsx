@@ -75,7 +75,7 @@ function ClientTable() {
                 <TableCell>
                   <Link to={`/cliente/recomendaciones:${row.id}`}>
                     <button type="button" className="ver-mas">
-                      ver más
+                      Ver más
                     </button>
                   </Link>
                 </TableCell>

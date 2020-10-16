@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+.paddTop{
+  padding-top: 90px;
+}
 
 @mixin direccionFlex($direccion) {
   display: flex;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TopBar.scss';
 // import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
 import { AccountCircle, Notifications } from '@material-ui/icons';
