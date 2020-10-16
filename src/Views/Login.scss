@@ -5,15 +5,22 @@
   background-color: $BackgroundLight;
   height: 100vh;
   .MuiContainer-root {
+    width: 45rem;
     border: 2px solid $BorderForm;
     border-radius: 11px;
     padding: 0;
+    height: 46rem;
+    background: #fff;
+    position: relative;
+    top: 6rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     .form-login {
       background-color: $white;
       .content-logo {
         width: 39%;
         height: 200px;
         margin: 0 auto;
+        margin-top: 4rem;
         .alg-center {
           text-align: center;
           font-size: 24px;
@@ -25,14 +32,16 @@
       .user-role {
         display: flex;
         justify-content: space-evenly;
+        margin-bottom: 3rem;
         .user-button {
-          width: 14rem;
+          width: 19rem;
           padding: 0.5rem 0.5rem;
           background-color: transparent;
           border: none;
           outline: none;
           font-size: 24px;
           cursor: pointer;
+
           &:focus {
             border-bottom: 4px solid #e0301e;
           }
@@ -41,6 +50,11 @@
       .container-form {
         width: 39%;
         margin: 0 auto;
+        .text-label {
+          font-size: 18px;
+          color: #4f4f4f;
+          margin: 1rem 0;
+        }
         .input-form {
           width: 90%;
           padding: 1rem 1rem;
@@ -56,7 +70,7 @@
             font-size: 1.2em;
           }
         }
-        .login-button {
+        .login-button:disabled {
           border: none;
           outline: none;
           border-radius: 5px;
@@ -64,6 +78,27 @@
           width: 100%;
           padding: 0.5rem 0.5rem;
           color: $white;
+          margin: 2rem 0;
+          padding: 1rem 0;
+          font-size: 16px;
+        }
+        .login-button:enabled {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          background: #d04a02;
+          width: 100%;
+          padding: 0.5rem 0.5rem;
+          color: $white;
+          margin: 2rem 0;
+          padding: 1rem 0;
+          font-size: 16px;
+          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+        a {
+          margin-left: 3.5rem;
+          font-size: 18px;
+          color: #4f95ff;
         }
       }
     }
