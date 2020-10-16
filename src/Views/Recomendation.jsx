@@ -38,7 +38,7 @@ export default function Recomendation() {
         Lee la Carta de Recomendación y responde con las siguientes acciones
       </strong>
       <section className="detalle-features">
-        <Details obj={cci} />
+        <Details obj={cci} ccID={ccID} />
         <Activity ccID={ccID} />
       </section>
     </div>
