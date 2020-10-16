@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import './Activity.scss';
+import PropTypes from 'prop-types';
 import HeaderNav from './HeaderNav';
 import Devolver from './Devolver';
 import Aceptar from './Aceptar';
@@ -16,18 +17,19 @@ export default function Activity({ ccID }) {
     user: localStorage.getItem('user'),
     date: firebase.firestore.Timestamp.fromDate(new Date()),
   };
-
+  Activity.propTypes = {
+    ccID: PropTypes.string.isRequired,
+  };
   const [comment, setComment] = useState(initialComment);
   const [commentBox, setCommentBox] = useState([]);
-  // const [arr, setArr] = useState([]);
+
   useEffect(() => {
     getComments(setCommentBox, ccID);
   }, []);
-  // console.log(commentBox);
-  // const arr = commentBox.filter((obj) => obj.id === ccID);
-  console.log(commentBox);
+
   return (
     <div className="Activity">
+      <div className="details-info-title">Acciones de la Gerencia</div>
       <HeaderNav setView={setView} />
       {view === 'Devolver' ? (
         <Devolver

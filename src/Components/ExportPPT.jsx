@@ -1122,7 +1122,7 @@ tableRecommendCci2.addTable(risk2, {
 const generatorContainer = (arr) => {
   return arr.map((ele, index) => (
     <div key={index} className="container-cci-download">
-      <span>Informe de Recomendaciones {ele}</span>
+      <span>{ele}</span>
       <button
         className="button-download-cci"
         type="button"
