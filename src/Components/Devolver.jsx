@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Devolver.scss';
+import SendIcon from '@material-ui/icons/Send';
 import HistoryComments from './HistoryComments';
 import { createComment } from '../API/crud';
-import { uploadImagePost } from '../API/storage';
+// import { uploadImagePost } from '../API/storage';
 
 export default function Devolver(props) {
   const { initialComment, comment, setComment, commentBox, ccID } = props;
@@ -20,12 +21,12 @@ export default function Devolver(props) {
     }
     console.log(' no content');
   };
-  const handleImageUpload = (e) => {
-    const [file] = e.target.files;
-    if (file) {
-      setFileInput(file);
-    }
-  };
+  // const handleImageUpload = (e) => {
+  //   const [file] = e.target.files;
+  //   if (file) {
+  //     setFileInput(file);
+  //   }
+  // };
 
   return (
     <>
@@ -62,7 +63,7 @@ export default function Devolver(props) {
             </button>
           </> */}
           <button type="button" onClick={() => sendComment(comment)}>
-            Enviar
+            <SendIcon className="sendIcon" />
           </button>
         </section>
       </section>

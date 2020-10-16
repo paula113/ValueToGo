@@ -14,7 +14,6 @@ export default function RecoDetails(props) {
     'Empresa B4',
     'Empresa B5',
   ];
-
   // console.log(values);
   return (
     <div className="detalles-de-recomendacion">

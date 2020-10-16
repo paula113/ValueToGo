@@ -16,7 +16,6 @@ import './ClientTable.scss';
 function ClientTable(props) {
   const { rowData } = props;
   // const [rowData, setRowData] = useState([]);
-
   // useEffect(() => {
   //   listenAllDocs(setRowData);
   // }, []);
@@ -50,7 +49,6 @@ function ClientTable(props) {
       label: 'RECOMENDACIONES',
     },
   ];
-
   return (
     <Paper>
       <TableContainer>
@@ -88,5 +86,4 @@ function ClientTable(props) {
     </Paper>
   );
 }
-
 export default ClientTable;
