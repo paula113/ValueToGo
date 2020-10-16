@@ -39,7 +39,7 @@ const getComments = (callback) =>
     .firestore()
     .collection('comentarios')
     // .where('id', '==', id)
-    .orderBy('date', 'desc')
+    .orderBy('date', 'asc')
     .onSnapshot((querySnapshot) => {
       const comments = [];
       querySnapshot.forEach((doc) => {
