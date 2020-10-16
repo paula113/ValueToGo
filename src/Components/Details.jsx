@@ -26,21 +26,7 @@ export default function Details(props) {
           <p>{obj.example}</p>
           <h5>Recomendation</h5>
           <p>{obj.recomendation}</p>
-          {console.log(obj)}
-          {/* <h5>{obj.tile}</h5> example */}
-          {/* <p>{value}</p> */}
         </div>
-
-        {/* {Object.entries(obj).map(([keys, value]) => (
-          <div key={keys} className="details-info-obj">
-            <h5>
-              {validateStrings(keys) === 'Fsli'
-                ? validateStrings('Rubro')
-                : validateStrings(keys)}
-            </h5>
-            <p>{value}</p>
-          </div>
-        ))} */}
       </section>
 
       {/* <section> */}
