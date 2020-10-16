@@ -39,7 +39,7 @@ const getComments = (callback) =>
     .firestore()
     .collection('comentarios')
     // .where('id', '==', id)
-    .orderBy('date', 'asc')
+    .orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
       const comments = [];
       querySnapshot.forEach((doc) => {
@@ -105,4 +105,3 @@ export {
   listenAllDocs,
   time,
 };
-
