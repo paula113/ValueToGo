@@ -12,10 +12,7 @@ import { Link } from 'react-router-dom';
 import { listenAllDocs } from '../API/crud';
 import Badge from './Badge';
 import './ClientTable.scss';
-import firebase from '../firebase.config';
-import headerColumn from'../API/headerTable';
-
-
+import headerColumn from '../API/headerTable';
 
 function RecoDetails() {
   const [empresa, setEmpresa] = useState('Todos');
@@ -25,10 +22,9 @@ function RecoDetails() {
     setEmpresa(e.currentTarget.value);
   }
   function handleSubmit(e) {
-    alert(`Your favorite flavor is: ${this.state.value}`);
+    alert(`valor capturado ${empresa}`);
     e.preventDefault();
   }
-
 
   return (
     <form className="detalles-de-recomendacion" onSubmit={handleSubmit}>
@@ -44,7 +40,6 @@ function RecoDetails() {
   );
 }
 
-
 function ClientTable() {
   const [rowData, setRowData] = useState([]);
 
@@ -53,40 +48,43 @@ function ClientTable() {
   }, []);
 
   return (
-    <Paper>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {headerColumn.map((column) => (
-                <TableCell key={column.id}>{column.label}</TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rowData.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>
-                  <Badge name={row.status} className={row.status} />
-                </TableCell>
-                <TableCell>{row.title}</TableCell>
-                <TableCell>{row.description}</TableCell>
-                <TableCell>{row.fsli}</TableCell>
-                <TableCell>{row.auditUnit}</TableCell>
-                <TableCell>{row.finalConclusionOnSeverity}</TableCell>
-                <TableCell>
-                  <Link to={`/cliente/recomendaciones:${row.id}`}>
-                    <button type="button" className="ver-mas">
-                      ver más
-                    </button>
-                  </Link>
-                </TableCell>
+    <>
+      <RecoDetails />
+      <Paper>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {headerColumn.map((column) => (
+                  <TableCell key={column.id}>{column.label}</TableCell>
+                ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
+            </TableHead>
+            <TableBody>
+              {rowData.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell>
+                    <Badge name={row.status} className={row.status} />
+                  </TableCell>
+                  <TableCell>{row.title}</TableCell>
+                  {/* <TableCell>{row.description}</TableCell> */}
+                  <TableCell>{row.fsli}</TableCell>
+                  <TableCell>{row.auditUnit}</TableCell>
+                  <TableCell>{row.finalConclusionOnSeverity}</TableCell>
+                  <TableCell>
+                    <Link to={`/cliente/recomendaciones:${row.id}`}>
+                      <button type="button" className="ver-mas">
+                        Ver más
+                      </button>
+                    </Link>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </>
   );
 }
 

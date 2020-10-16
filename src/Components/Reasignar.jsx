@@ -9,8 +9,8 @@ export default function Reasignar() {
         Asigna la carta de Recomendación al encargado que corresponde
       </label>
       <form name="assignment">
-        <h3>Area</h3>
-        <p>Selecciona el area al que deseas asignar la recomendación.</p>
+        <h3>Área</h3>
+        <p>Selecciona el área al que deseas asignar la recomendación.</p>
         <select className="select-assignment" name="Selecciona" id="">
           <option value="finanzas">Finanzas</option>
           <option value="comercial">Comercial</option>

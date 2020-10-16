@@ -4,10 +4,18 @@
   background-color: $white;
   margin: 1rem;
   padding: 1rem;
-  overflow: auto;
   width: 50%;
-  height: 30rem; //   background: gray;
+  // min-height: 30rem;
+  overflow: auto;
+  height: 30rem;
+  // background-color: blue;
+  // .details-info-container {
+  //   // background-color: cornsilk;
+  //   overflow: auto;
+  //   height: 25rem;
+  // }
   .details-info-obj {
+    // background-color: burlywood;
     margin: 1rem;
   }
 }

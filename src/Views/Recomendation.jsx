@@ -9,14 +9,14 @@ import './Recomendation.scss';
 export default function Recomendation() {
   const { id } = useParams();
   const [cci, setCci] = useState({});
-
+  const ccID = id.split('').slice(1).join('');
   useEffect(() => {
     console.log(
       'esta es la vista de recomendacion, incluir los componentes aquí, por favor. grcias <3',
     );
-    const cciID = id.split('').slice(1).join('');
-    console.log(cciID);
-    getADocument(cciID, 'puntosDeControl')
+    // const cciID = id.split('').slice(1).join('');
+    console.log(ccID);
+    getADocument(ccID, 'puntosDeControl')
       .then((doc) => {
         if (doc.exists) {
           setCci(() => doc.data());
@@ -34,10 +34,12 @@ export default function Recomendation() {
   return (
     <div className="detalle-recomedaciones">
       <Breadcrumb />
-      <p>Lee la Carta de Recomendación y responde con las siguientes acciones</p>
+      <strong>
+        Lee la Carta de Recomendación y responde con las siguientes acciones
+      </strong>
       <section className="detalle-features">
         <Details obj={cci} />
-        <Activity ccID={id} />
+        <Activity ccID={ccID} />
       </section>
     </div>
   );

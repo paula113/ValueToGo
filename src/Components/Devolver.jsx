@@ -5,7 +5,7 @@ import { createComment } from '../API/crud';
 import { uploadImagePost } from '../API/storage';
 
 export default function Devolver(props) {
-  const { initialComment, comment, setComment, commentBox } = props;
+  const { initialComment, comment, setComment, commentBox, ccID } = props;
 
   const currentUserUid = localStorage.getItem('user');
   const [fileInput, setFileInput] = useState('');
@@ -30,9 +30,13 @@ export default function Devolver(props) {
       {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
         <div className="HistoryComments-box">
-          {commentBox.map((obj) => (
-            <HistoryComments Key={obj.user} obj={obj} />
-          ))}
+          {commentBox.map((obj, i) => {
+            switch (obj.id) {
+              case ccID:
+                return <HistoryComments Key={`${obj.id}${i}`} obj={obj} />;
+              default:
+            }
+          })}
         </div>
 
         {/* <HistoryComments commentBox={commentBox} /> */}
@@ -44,18 +48,17 @@ export default function Devolver(props) {
             name="content"
             onChange={catchComment}
           />
-          <>
+          {/* <>
             <input type="file" onChange={handleImageUpload} />
-            {/* <input type="file" onChange={(e) => setFile(() => e.target)} /> */}
             <button
               type="button"
               onClick={() => {
-                uploadImagePost(fileInput, currentUserUid);
+                uploadImagePost(fileInput, ccID);
               }}
             >
               Subir
             </button>
-          </>
+          </> */}
           <button type="button" onClick={() => sendComment(comment)}>
             Enviar
           </button>

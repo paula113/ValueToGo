@@ -3,6 +3,10 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.paddTop {
+  padding-top: 90px;
 }
 
 @mixin direccionFlex($direccion) {
@@ -38,7 +42,7 @@
     }
   }
 }
-@mixin measures($with, $height){
+@mixin measures($with, $height) {
   width: $with;
   height: $height;
 }

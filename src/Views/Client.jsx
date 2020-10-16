@@ -5,10 +5,7 @@ import TabWrapper from '../Components/TabWrapper';
 
 function Client() {
   return (
-    <main>
-      <h1>Re</h1>
-      <h1>holi</h1>
-      <h1>holi</h1>
+    <main className="paddTop">
       <h1>Recomendaciones de Control</h1>
       {/* <RecoDetails /> */}
       <TabWrapper />
