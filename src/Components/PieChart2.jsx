@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 import { dataPieChart } from '../API/dataDashboard';
-import firebase from '../firebase.config';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -34,26 +33,6 @@ const renderCustomizedLabel = ({
 
 function PieChart2() {
   // static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
-
-  // useEffect(() => {
-  //   firebase
-  //     .firestore()
-  //     .collection('puntosDeControl')
-  //     .where('status', '==', 'Rechazado')
-  //     .get()
-  //     .then((resp) => console.log(resp.size));
-  // }, []);
-
-  const getData = firebase.firestore().collection('puntosDeControl');
-
-  const allStatus = getData.where('status', '==', 'Pendiente').get();
-  allStatus
-    .then((item) => {
-      console.log('estoy en then,creo :(', item);
-    })
-    .catch((reason) => {
-      console.log(reason);
-    });
 
   return (
     <PieChart width={450} height={400}>
