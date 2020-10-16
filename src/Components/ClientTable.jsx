@@ -12,6 +12,38 @@ import { Link } from 'react-router-dom';
 import { listenAllDocs } from '../API/crud';
 import Badge from './Badge';
 import './ClientTable.scss';
+import firebase from '../firebase.config';
+import headerColumn from'../API/headerTable';
+
+
+
+function RecoDetails() {
+  const [empresa, setEmpresa] = useState('Todos');
+
+  function handleSelect(e) {
+    e.preventDefault();
+    setEmpresa(e.currentTarget.value);
+  }
+  function handleSubmit(e) {
+    alert(`Your favorite flavor is: ${this.state.value}`);
+    e.preventDefault();
+  }
+
+
+  return (
+    <form className="detalles-de-recomendacion" onSubmit={handleSubmit}>
+      <select value={empresa} onChange={handleSelect}>
+        <option value="Todos">Todos</option>
+        <option value="Empresa-B1">Empresa B1</option>
+        <option value="Empresa-B2">Empresa B2</option>
+        <option value="Empresa-B3">Empresa B3</option>
+        <option value="Empresa-B4">Empresa B4</option>
+        <option value="Empresa-B5">Empresa B5</option>
+      </select>
+    </form>
+  );
+}
+
 
 function ClientTable() {
   const [rowData, setRowData] = useState([]);
@@ -19,36 +51,6 @@ function ClientTable() {
   useEffect(() => {
     listenAllDocs(setRowData);
   }, []);
-  const headerColumn = [
-    {
-      id: '01',
-      label: 'ESTADO',
-    },
-    {
-      id: '02',
-      label: 'TÍTULO',
-    },
-    {
-      id: '03',
-      label: 'DESCRIPCIÓN',
-    },
-    {
-      id: '04',
-      label: 'RUBRO',
-    },
-    {
-      id: '05',
-      label: 'EMPRESA',
-    },
-    {
-      id: '06',
-      label: 'IMPACTO',
-    },
-    {
-      id: '07',
-      label: 'RECOMENDACIONES',
-    },
-  ];
 
   return (
     <Paper>

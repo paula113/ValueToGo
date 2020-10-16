@@ -1,7 +1,7 @@
 import React from 'react';
 import './Client.scss';
 import TabWrapper from '../Components/TabWrapper';
-import RecoDetails from '../Components/RecoDetails';
+// import RecoDetails from '../Components/RecoDetails';
 
 function Client() {
   return (
@@ -10,7 +10,7 @@ function Client() {
       <h1>holi</h1>
       <h1>holi</h1>
       <h1>Recomendaciones de Control</h1>
-      <RecoDetails />
+      {/* <RecoDetails /> */}
       <TabWrapper />
     </main>
   );
