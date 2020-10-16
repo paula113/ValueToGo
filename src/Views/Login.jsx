@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Login.scss';
 import { signIn } from '../API/auth';
+import logoQuick from '../Assets/logo-quick-value.svg';
 
 const Login = () => {
   const history = useHistory();
@@ -40,6 +41,8 @@ const Login = () => {
   return (
     <main className="login-main">
       <form action="" className="" onSubmit={loginSubmit}>
+        <img className="logo-image" src={logoQuick} alt="Logo de Quick value" />
+        <span className="alg-center">Seleccione por favor</span>
         <div className="user-role">
           <button
             className="user-button"
@@ -56,21 +59,25 @@ const Login = () => {
             Cliente
           </button>
         </div>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          name="email"
-          placeholder="Email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          name="passsword"
-          placeholder="Password"
-        />
-        <button type="submit" className="Login-button">
-          Login
-        </button>
+        <div className="container-input-form">
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            name="email"
+            placeholder="ejemplo@ejemplo.com"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            name="passsword"
+            placeholder="password"
+          />
+          <button type="submit" className="Login-button">
+            Ingresar
+          </button>
+        </div>
       </form>
     </main>
   );
