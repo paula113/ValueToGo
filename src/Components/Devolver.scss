@@ -2,14 +2,15 @@
 @import '../variables';
 
 .devolver-chat {
-  background-color: $BackgroundLight;
+  // background-color: $BackgroundLight;
   @include direccionFlex(column);
   border-radius: 0.5rem;
+  height: 35.5rem;
   .HistoryComments-box {
     // background-color: tomato;
     margin: 1rem;
     overflow: auto;
-    max-height: 20rem;
+    // max-height: 20rem;
   }
   .devolver-chat-send {
     background-color: $BackgroundLight;
@@ -23,6 +24,7 @@
       width: 90%;
       margin: 0.5rem 0.2rem;
       border: none;
+      outline: none;
     }
     button {
       margin: 1rem 0.2rem;
