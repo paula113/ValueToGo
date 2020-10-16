@@ -1,66 +1,135 @@
-@import '../App.scss';
+// @import '../App.scss';
 @import '../variables';
 
 .login-main {
+  background-color: $BackgroundLight;
   height: 100vh;
-  background: #e5e5e5;
-  position: relative;
-  z-index: 3;
-  form {
-    @include direccionFlex(column);
-    background-color: rgb(255, 255, 255);
-    border-radius: 0.5rem;
-    width: 50%;
-    height: 60%;
-    position: relative;
-    top: 5rem;
-    left: 20rem;
-    margin: auto 0;
-    padding: 1rem;
-    .user-role {
-      width: 16rem;
-      align-self: center;
-      @include direccionFlex(row);
-      button {
-        @include butonRol;
-        margin: 1rem 2rem;
+  .MuiContainer-root {
+    border: 2px solid $BorderForm;
+    border-radius: 11px;
+    padding: 0;
+    .form-login {
+      background-color: $white;
+      .content-logo {
+        width: 39%;
+        height: 200px;
+        margin: 0 auto;
+        .alg-center {
+          text-align: center;
+          font-size: 24px;
+          letter-spacing: 0.025em;
+          // font-family: Helvetica 65 Medium;
+          margin-top: 27px;
+        }
       }
-      button:hover {
-        border-bottom: 0.2rem solid $Red;
+      .user-role {
+        display: flex;
+        justify-content: space-evenly;
+        .user-button {
+          width: 14rem;
+          padding: 0.5rem 0.5rem;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 24px;
+          cursor: pointer;
+          &:focus {
+            border-bottom: 4px solid #e0301e;
+          }
+        }
       }
-    }
-    .Login-button {
-      background-color: $MediumGrey;
-      border: none;
-      border-radius: 5px;
-      padding: 0.5rem;
-      @include measures(16rem, 2.2rem);
-      margin: 1rem 0;
-      align-self: center;
-      color: $white;
-      outline: none;
-      cursor: pointer;
-    }
-    input {
-      padding: 0.2rem;
-      @include measures(15rem, 1.5rem);
-      display: flex;
-      margin-bottom: 0.3rem;
-      align-self: center;
-      filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.14)),
-        drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.12));
+      .container-form {
+        width: 39%;
+        margin: 0 auto;
+        .input-form {
+          width: 90%;
+          padding: 1rem 1rem;
+          border: none;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          outline: none;
+          &:hover {
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.14), 0 2px 2px rgba(0, 0, 0, 0.12);
+          }
+          &::placeholder {
+            color: #7d7d7d;
+            font-size: 1.2em;
+          }
+        }
+        .login-button {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          background-color: #bdbdbd;
+          width: 100%;
+          padding: 0.5rem 0.5rem;
+          color: $white;
+        }
+      }
     }
   }
 }
-.logo-image{
-  width: 17rem;
-  align-self: center;
-  margin-bottom: 1.5rem;
-}
-.container-input-form{
-  width: 17rem;
-  align-self: center;
-}
-.alg-center{
-  align-self: center;
-}
+
+// .login-main {
+//   height: 100vh;
+//   background: #e5e5e5;
+//   position: relative;
+//   z-index: 3;
+//   .form-login {
+//     @include direccionFlex(column);
+//     background-color: rgb(255, 255, 255);
+//     border-radius: 0.5rem;
+//     width: 50%;
+//     height: 640px;
+//     position: relative;
+//     top: 5rem;
+//     left: 20rem;
+//     margin: auto 0;
+//     padding: 1rem;
+//     .user-role {
+//       width: 16rem;
+//       align-self: center;
+//       @include direccionFlex(row);
+//       button {
+//         @include butonRol;
+//         margin: 1rem 2rem;
+//       }
+//       button:hover {
+//         border-bottom: 0.2rem solid $Red;
+//       }
+//     }
+//     .Login-button {
+//       background-color: $MediumGrey;
+//       border: none;
+//       border-radius: 5px;
+//       padding: 0.5rem;
+//       @include measures(16rem, 2.2rem);
+//       margin: 1rem 0;
+//       align-self: center;
+//       color: $white;
+//       outline: none;
+//       cursor: pointer;
+//     }
+//     input {
+//       padding: 0.2rem;
+//       @include measures(15rem, 1.5rem);
+//       display: flex;
+//       margin-bottom: 0.3rem;
+//       align-self: center;
+//       filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.14)),
+//         drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.12));
+//     }
+//   }
+// }
+// .logo-image {
+//   width: 17rem;
+//   align-self: center;
+//   margin-bottom: 1.5rem;
+// }
+// .container-input-form {
+//   width: 17rem;
+//   align-self: center;
+// }
+// .alg-center {
+//   align-self: center;
+// }
