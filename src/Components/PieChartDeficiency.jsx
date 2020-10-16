@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react';
 import { PieChart, Pie, Legend, Cell } from 'recharts';
 import { dataPieDeficiency } from '../API/dataDashboard';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = [
+  '#d04a02'
+];
+
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/3Leoa7f4/';
@@ -16,7 +19,7 @@ export default class Example extends PureComponent {
           cy={200}
           innerRadius={60}
           outerRadius={80}
-          fill="#8884d8"
+          fill="#d04a02"
           paddingAngle={0}
           dataKey="value"
         >
