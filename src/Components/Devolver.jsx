@@ -14,7 +14,7 @@ export default function Devolver(props) {
     setComment({ ...comment, [name]: value });
   };
   const sendComment = (obj) => {
-    if (obj.content != '') {
+    if (obj.content !== '') {
       createComment(obj);
       setComment({ ...initialComment });
     }
