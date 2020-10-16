@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Devolver.scss';
+import SendIcon from '@material-ui/icons/Send';
 import HistoryComments from './HistoryComments';
 import { createComment } from '../API/crud';
 import { uploadImagePost } from '../API/storage';
@@ -62,7 +63,7 @@ export default function Devolver(props) {
             </button>
           </> */}
           <button type="button" onClick={() => sendComment(comment)}>
-            Enviar
+            <SendIcon className="sendIcon" />
           </button>
         </section>
       </section>

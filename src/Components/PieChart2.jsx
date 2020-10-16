@@ -1,12 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
-
-const data = [
-  { name: 'Proceso', value: 400 },
-  { name: 'Aceptado', value: 300 },
-  { name: 'Pendiente', value: 300 },
-  { name: 'Rechazado', value: 200 },
-];
+import { dataPieChart } from '../API/dataDashboard';
+import firebase from '../firebase.config';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -37,28 +32,48 @@ const renderCustomizedLabel = ({
   );
 };
 
-export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
+function PieChart2() {
+  // static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
 
-  render() {
-    return (
-      <PieChart width={400} height={400}>
-        <Pie
-          data={data}
-          cx={200}
-          cy={200}
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Legend verticalAlign="top" height={36} layout="vertical" />
-      </PieChart>
-    );
-  }
+  // useEffect(() => {
+  //   firebase
+  //     .firestore()
+  //     .collection('puntosDeControl')
+  //     .where('status', '==', 'Rechazado')
+  //     .get()
+  //     .then((resp) => console.log(resp.size));
+  // }, []);
+
+  const getData = firebase.firestore().collection('puntosDeControl');
+
+  const allStatus = getData.where('status', '==', 'Pendiente').get();
+  allStatus
+    .then((item) => {
+      console.log('estoy en then,creo :(', item);
+    })
+    .catch((reason) => {
+      console.log(reason);
+    });
+
+  return (
+    <PieChart width={450} height={400}>
+      <Pie
+        data={dataPieChart}
+        cx={200}
+        cy={200}
+        labelLine={false}
+        label={renderCustomizedLabel}
+        outerRadius={80}
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {dataPieChart.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Legend height={36} layout="vertical" align="right" verticalAlign="middle" />
+    </PieChart>
+  );
 }
+
+export default PieChart2;

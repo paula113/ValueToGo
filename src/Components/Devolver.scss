@@ -30,6 +30,10 @@
       border: none;
       background-color: $Yellow;
       padding: 0.3rem;
+      .sendIcon {
+        color: $white;
+        height: 1rem;
+      }
     }
   }
 }

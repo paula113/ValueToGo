@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Login.scss';
+import { Container } from '@material-ui/core';
 import { signIn } from '../API/auth';
 import logoQuick from '../Assets/logo-quick-value.svg';
 
@@ -40,45 +42,58 @@ const Login = () => {
   };
   return (
     <main className="login-main">
-      <form action="" className="" onSubmit={loginSubmit}>
-        <img className="logo-image" src={logoQuick} alt="Logo de Quick value" />
-        <span className="alg-center">Seleccione por favor</span>
-        <div className="user-role">
-          <button
-            className="user-button"
-            type="button"
-            onClick={() => setView('col-price')}
-          >
-            Price
-          </button>
-          <button
-            className="user-button"
-            type="button"
-            onClick={() => setView('client')}
-          >
-            Cliente
-          </button>
-        </div>
-        <div className="container-input-form">
-          <label htmlFor="email">Correo electrónico</label>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            name="email"
-            placeholder="ejemplo@ejemplo.com"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            name="passsword"
-            placeholder="password"
-          />
-          <button type="submit" className="Login-button">
-            Ingresar
-          </button>
-        </div>
-      </form>
+      <Container maxWidth="md">
+        <form action="" className="form-login" onSubmit={loginSubmit}>
+          <div className="content-logo">
+            <img className="logo-image" src={logoQuick} alt="Logo de Quick value" />
+            <p className="alg-center">Inicia Sesión</p>
+          </div>
+
+          <div className="user-role">
+            <button
+              className="user-button"
+              type="button"
+              onClick={() => setView('col-price')}
+            >
+              Price
+            </button>
+            <button
+              className="user-button"
+              type="button"
+              onClick={() => setView('client')}
+            >
+              Cliente
+            </button>
+          </div>
+          <div className="container-form">
+            <label htmlFor="email">
+              <p>Correo</p>
+              <input
+                className="input-form"
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                name="email"
+                placeholder="ejemplo@ejemplo.com"
+              />
+            </label>
+            <label htmlFor="password">
+              <p>Password</p>
+
+              <input
+                className="input-form"
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                name="passsword"
+                placeholder="password"
+              />
+            </label>
+            <button type="submit" className="login-button">
+              Ingresar
+            </button>
+            <a href="#">Olvidé mi contraseña</a>
+          </div>
+        </form>
+      </Container>
     </main>
   );
 };
