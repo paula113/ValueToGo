@@ -2,5 +2,14 @@
 
 .content {
   background-color: $white;
-  display: flex;
+  padding: 0 7rem;
+  // display: grid;
 }
+.MuiGrid-grid-md-12,
+.MuiGrid-grid-md-12 {
+  text-align: -webkit-center;
+}
+
+// getData.where('status', '==', 'Proceso').get(),
+// getData.where('status', '==', 'Aceptado').get(),
+// getData.where('status', '==', 'Rechazado').get(),
