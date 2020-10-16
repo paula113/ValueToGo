@@ -7,6 +7,7 @@
 .MuiTable-root {
   width: 100%;
   display: table;
+  padding: 0.5rem;
   -webkit-border-vertical-spacing: 2rem;
   border-collapse: separate;
   border: 1px solid #cdcdcd;
@@ -43,8 +44,9 @@
   padding: 13.5px;
   border-radius: 5px;
   font-size: 16px;
+  margin: 0 3rem;
 }
-.ver-mas:hover{
+.ver-mas:hover {
   background-color: $Orange;
   color: $white;
 }

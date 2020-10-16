@@ -28,10 +28,10 @@ function ClientTable() {
       id: '02',
       label: 'TÍTULO',
     },
-    {
-      id: '03',
-      label: 'DESCRIPCIÓN',
-    },
+    // {
+    //   id: '03',
+    //   label: 'DESCRIPCIÓN',
+    // },
     {
       id: '04',
       label: 'RUBRO',
@@ -68,7 +68,7 @@ function ClientTable() {
                   <Badge name={row.status} className={row.status} />
                 </TableCell>
                 <TableCell>{row.title}</TableCell>
-                <TableCell>{row.description}</TableCell>
+                {/* <TableCell>{row.description}</TableCell> */}
                 <TableCell>{row.fsli}</TableCell>
                 <TableCell>{row.auditUnit}</TableCell>
                 <TableCell>{row.finalConclusionOnSeverity}</TableCell>
