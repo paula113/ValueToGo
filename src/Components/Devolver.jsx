@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Devolver.scss';
+import SendIcon from '@material-ui/icons/Send';
 import HistoryComments from './HistoryComments';
 import { createComment } from '../API/crud';
-import { uploadImagePost } from '../API/storage';
+// import { uploadImagePost } from '../API/storage';
 
 export default function Devolver(props) {
   const { initialComment, comment, setComment, commentBox, ccID } = props;
@@ -14,17 +15,19 @@ export default function Devolver(props) {
     setComment({ ...comment, [name]: value });
   };
   const sendComment = (obj) => {
-    createComment(obj);
-    setComment({ ...initialComment });
-  };
-  const handleImageUpload = (e) => {
-    const [file] = e.target.files;
-    if (file) {
-      setFileInput(file);
+    if (obj.content !== '') {
+      createComment(obj);
+      setComment({ ...initialComment });
     }
+    console.log(' no content');
   };
+  // const handleImageUpload = (e) => {
+  //   const [file] = e.target.files;
+  //   if (file) {
+  //     setFileInput(file);
+  //   }
+  // };
 
-  // console.log(commentBox);
   return (
     <>
       {/* <h2>Devolver</h2> */}
@@ -42,7 +45,7 @@ export default function Devolver(props) {
         {/* <HistoryComments commentBox={commentBox} /> */}
         <section className="devolver-chat-send">
           <textarea
-            id=""
+            value={comment.content}
             cols="30"
             placeholder="Escribe un comentario"
             name="content"
@@ -60,7 +63,7 @@ export default function Devolver(props) {
             </button>
           </> */}
           <button type="button" onClick={() => sendComment(comment)}>
-            Enviar
+            <SendIcon className="sendIcon" />
           </button>
         </section>
       </section>

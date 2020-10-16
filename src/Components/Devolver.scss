@@ -21,15 +21,22 @@
       padding: 0.3rem;
       border-radius: 0.5rem;
       width: 90%;
-      margin: 1rem 0.2rem;
+      margin: 0.5rem 0.2rem;
       border: none;
     }
     button {
       margin: 1rem 0.2rem;
-      border-radius: 100%;
+      border-radius: 50%;
       border: none;
-      background-color: $Yellow;
-      padding: 0.3rem;
+      background-color: $Tangarine;
+      padding: 10px 7px;
+      height: 2rem;
+      width: 2rem;
+      text-align: center;
+      .sendIcon {
+        color: $white;
+        height: 1rem;
+      }
     }
   }
 }

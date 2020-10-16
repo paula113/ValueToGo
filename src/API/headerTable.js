@@ -7,10 +7,10 @@ const headerColumn = [
     id: '02',
     label: 'TÍTULO',
   },
-  {
-    id: '03',
-    label: 'DESCRIPCIÓN',
-  },
+  // {
+  //   id: '03',
+  //   label: 'DESCRIPCIÓN',
+  // },
   {
     id: '04',
     label: 'RUBRO',
