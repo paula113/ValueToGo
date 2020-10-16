@@ -2,7 +2,7 @@ import React from 'react';
 import './RecoDetails.scss';
 
 export default function RecoDetails(props) {
-  const { setEmpresa, setStatus } = props;
+  const { setEmpresa } = props;
   return (
     <div className="detalles-de-recomendacion">
       <select

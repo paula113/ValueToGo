@@ -8,13 +8,12 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core/';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { listenAllDocs } from '../API/crud';
 import Badge from './Badge';
 import './ClientTable.scss';
 
 function ClientTable() {
-  const { id } = useParams();
   const [rowData, setRowData] = useState([]);
 
   useEffect(() => {

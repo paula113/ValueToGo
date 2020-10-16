@@ -5,19 +5,19 @@ import HeaderNav from './HeaderNav';
 import Devolver from './Devolver';
 import Aceptar from './Aceptar';
 import Reasignar from './Reasignar';
-import { getComments, getADocument, time } from '../API/crud';
+import { getComments } from '../API/crud';
 
 export default function Activity({ ccID }) {
   const [view, setView] = useState('');
   const initialComment = {
+    id: ccID,
     content: '',
     user: localStorage.getItem('user'),
-    // timestamp: time,
   };
 
   const [comment, setComment] = useState(initialComment);
   const [commentBox, setCommentBox] = useState([]);
-  useEffect(() => getComments(setCommentBox), []);
+  useEffect(() => getComments(setCommentBox, ccID), []);
   // console.log(commentBox);
   return (
     <div className="Activity">

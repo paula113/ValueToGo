@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Devolver.scss';
 import HistoryComments from './HistoryComments';
@@ -6,7 +5,8 @@ import { createComment } from '../API/crud';
 import { uploadImagePost } from '../API/storage';
 
 export default function Devolver(props) {
-  const { initialComment, comment, setComment, commentBox, setCommentBox } = props;
+  const { initialComment, comment, setComment, commentBox } = props;
+
   const currentUserUid = localStorage.getItem('user');
   const [fileInput, setFileInput] = useState('');
   const catchComment = (e) => {
@@ -30,8 +30,8 @@ export default function Devolver(props) {
       {/* <h2>Devolver</h2> */}
       <section className="devolver-chat">
         <div className="HistoryComments-box">
-          {commentBox.map((obj) => (
-            <HistoryComments Key={obj.user} obj={obj} />
+          {commentBox.map((obj, i) => (
+            <HistoryComments Key={`${obj.id}${i}`} obj={obj} />
           ))}
         </div>
 

@@ -35,11 +35,13 @@ const createComment = (obj) =>
     .catch((error) => {
       console.log('Ocurrió un error al enviar tu comentario', error);
     });
-const getComments = (callback) =>
+const getComments = (callback, id) =>
   firebase
     .firestore()
     .collection('comentarios')
+    .where('id', '==', id)
     .onSnapshot((querySnapshot) => {
+      console.log(id);
       const comments = [];
       querySnapshot.forEach((doc) => {
         const objComment = {
