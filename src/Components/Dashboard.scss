@@ -9,7 +9,14 @@
 .MuiGrid-grid-md-12 {
   text-align: -webkit-center;
 }
-
+tspan {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.recharts-surface {
+  // background-color: crimson;
+}
 // getData.where('status', '==', 'Proceso').get(),
 // getData.where('status', '==', 'Aceptado').get(),
 // getData.where('status', '==', 'Rechazado').get(),

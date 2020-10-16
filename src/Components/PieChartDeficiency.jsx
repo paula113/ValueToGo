@@ -17,7 +17,7 @@ export default class Example extends PureComponent {
           innerRadius={60}
           outerRadius={80}
           fill="#8884d8"
-          paddingAngle={5}
+          paddingAngle={0}
           dataKey="value"
         >
           {dataPieDeficiency.map((entry, index) => (

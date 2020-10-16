@@ -3,43 +3,43 @@ import firebase from '../firebase.config';
 const dataFsli = [
   {
     name: 'Acounts payable',
-    value: 1,
+    Total: 1,
   },
   {
     name: 'Acounts receivable, Allowance for doubtful accounts',
-    value: 1,
+    Total: 1,
   },
   {
     name: 'Accruals, provisions and other liabilities',
-    value: 1,
+    Total: 1,
   },
   {
     name: 'Cash and cash equivalents',
-    value: 2,
+    Total: 1,
   },
   {
     name: 'Fraud risk',
-    value: 1,
+    Total: 1,
   },
   {
     name: 'Income taxes, Income tax expense',
-    value: 1,
+    Total: 3,
   },
   {
     name: 'Notes receivable',
-    value: 1,
+    Total: 1,
   },
   {
     name: 'Planning Activities',
-    value: 3,
+    Total: 1,
   },
   {
     name: 'Property, plat and equipment, Depreciation expense',
-    value: 1,
+    Total: 5,
   },
   {
     name: 'Salaries/payroll expense',
-    value: 2,
+    Total: 10,
   },
 ];
 
@@ -50,7 +50,10 @@ const dataPieChart = [
   { name: 'Rechazado', value: 8 },
 ];
 
-const dataPieDeficiency = [{ name: 'Deficiency internal control ', value: 1000 }];
+const dataPieDeficiency = [
+  { name: 'Deficiency internal control ', value: 500 },
+  { name: 'Suma Total ', value: 500 },
+];
 export { dataFsli, dataPieDeficiency, dataPieChart };
 
 // useEffect(() => {
