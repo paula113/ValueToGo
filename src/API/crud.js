@@ -105,4 +105,3 @@ export {
   listenAllDocs,
   time,
 };
-
