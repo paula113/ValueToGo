@@ -2,7 +2,12 @@ import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 import { dataPieChart } from '../API/dataDashboard';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = [
+  'rgb(235, 140, 0)',
+  'rgb(219, 83, 106)',
+  'rgb(255, 182, 0)',
+  'rgb(224, 48, 30)',
+];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({

@@ -25,7 +25,7 @@ export default class Example extends PureComponent {
   <Legend />
   <CartesianGrid stroke="#f5f5f5" />
   {/* <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" /> */}
-  <Bar dataKey="Total" barSize={20} fill=" rgb(47, 128, 237)" />
+  <Bar dataKey="Total" barSize={20} fill="rgb(208, 74, 2)" />
   {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" /> */}
 </ComposedChart>)}
     //   <BarChart
