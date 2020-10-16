@@ -9,7 +9,9 @@
 .paddTop {
   padding-top: 90px;
 }
-
+button{
+  cursor: pointer;
+}
 @mixin direccionFlex($direccion) {
   display: flex;
   justify-content: space-between;
