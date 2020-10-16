@@ -1,0 +1,44 @@
+@import '../App.scss';
+@import '../variables';
+
+.buy-modal-wrapper {
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+.buy-modal{
+    z-index: 100;
+    background: white;
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 3px;
+    max-width: 270px;
+    height: 270px;
+    justify-content: center;
+    align-items: center;
+}
+// .buy-span{
+//     font-size: 13px;
+//     font-weight: bold;
+// }
+// .buy-span-x{
+//     font-family: $nunito;
+//     font-size: 14px;
+//     padding: 5px;
+
+// }
+.button-modal-complete{
+    width: 100px;
+    height: 40px;
+    border:none;
+    border-radius: 10px;
+    background-color: $Orange;
+    color: $white;
+    margin-top: 15px;
+}
