@@ -22,7 +22,6 @@ function RecoDetails() {
     setEmpresa(e.currentTarget.value);
   }
   function handleSubmit(e) {
-    alert(`valor capturado ${empresa}`);
     e.preventDefault();
   }
 

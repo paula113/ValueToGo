@@ -21,7 +21,8 @@ function TabPanel({ children, value, index, ...other }) {
   );
 }
 
-function TabWrapper() {
+function TabWrapper(props) {
+  const { rowData } = props;
   // const [value, setValue] = useState(1);
   const match = useRouteMatch();
   // console.log(match);
@@ -31,7 +32,7 @@ function TabWrapper() {
       tabIndex: '0',
       route: '/cliente/recomendaciones',
       label: 'Recomendaciones',
-      content: <ClientTable />,
+      content: <ClientTable rowData={rowData} />,
     },
     {
       tabIndex: '1',
