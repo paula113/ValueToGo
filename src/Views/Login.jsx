@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './Login.scss';
 import { Container } from '@material-ui/core';
 import { signIn } from '../API/auth';
@@ -90,7 +91,7 @@ const Login = () => {
             <button type="submit" className="login-button">
               Ingresar
             </button>
-            <a href="#">Olvidé mi contraseña</a>
+            <Link to="">Olvidé mi contraseña</Link>
           </div>
         </form>
       </Container>
