@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Devolver.scss';
 import SendIcon from '@material-ui/icons/Send';
 import HistoryComments from './HistoryComments';
@@ -8,8 +8,8 @@ import { createComment } from '../API/crud';
 export default function Devolver(props) {
   const { initialComment, comment, setComment, commentBox, ccID } = props;
 
-  const currentUserUid = localStorage.getItem('user');
-  const [fileInput, setFileInput] = useState('');
+  // const currentUserUid = localStorage.getItem('user');
+  // const [fileInput, setFileInput] = useState('');
   const catchComment = (e) => {
     const { name, value } = e.target;
     setComment({ ...comment, [name]: value });

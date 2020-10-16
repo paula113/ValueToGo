@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 import { dataPieChart } from '../API/dataDashboard';
 import firebase from '../firebase.config';
