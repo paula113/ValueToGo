@@ -12,11 +12,14 @@ export default function HistoryComments(props) {
           styleColor === obj.user ? 'white' : 'yellow'
         }`}
       >
-        {obj.id === 'id' ? null : (
+        {obj.content || obj.image ? (
           <>
             <h5>{obj.user}</h5>
-            <p>{obj.content}</p>
+            {obj.content ? <p>{obj.content}</p> : null}
+            {obj.image ? <img src={obj.image} alt={obj.image} /> : null}
           </>
+        ) : (
+          <h5>{obj.user}</h5>
         )}
       </div>
     </>
