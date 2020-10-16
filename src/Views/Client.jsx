@@ -8,6 +8,7 @@ function Client() {
   const [rowData, setRowData] = useState([]);
   const [category, setCategory] = useState('Todos');
   const newRowData = rowData.filter((obj) => obj.auditUnit === category);
+  console.log(rowData);
 
   useEffect(() => {
     listenAllDocs(setRowData);
@@ -16,7 +17,7 @@ function Client() {
     <main className="paddTop">
       <h1>Recomendaciones de Control</h1>
       <RecoDetails category={category} setCategory={setCategory} />
-      <TabWrapper rowData={newRowData} />
+      <TabWrapper rowData={category === 'Todos' ? rowData : newRowData} />
     </main>
   );
 }

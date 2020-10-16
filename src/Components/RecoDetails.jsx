@@ -19,7 +19,6 @@ export default function RecoDetails(props) {
   return (
     <div className="detalles-de-recomendacion">
       <select
-        value="Todos"
         onChange={(e) => setCategory(e.target.value)}
         // onChange={(e) => {
         //   e.preventDefault();
