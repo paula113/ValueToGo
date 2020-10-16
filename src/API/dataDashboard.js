@@ -55,28 +55,3 @@ const dataPieDeficiency = [
   { name: 'Suma Total ', value: 500 },
 ];
 export { dataFsli, dataPieDeficiency, dataPieChart };
-
-// useEffect(() => {
-//   firebase
-//     .firestore()
-//     .collection('puntosDeControl')
-//     .where('status', '==', 'Pendiente')
-//     .get()
-//     .then((resp) => console.log(resp.size));
-// }, []);
-
-// const getData = firebase.firestore().collection('puntosDeControl');
-
-// const allStatus = Promise.all([
-//   getData.where('status', '==', 'Pendiente').get(),
-//   getData.where('status', '==', 'Proceso').get(),
-//   getData.where('status', '==', 'Aceptado').get(),
-//   getData.where('status', '==', 'Rechazado').get(),
-// ]);
-// allStatus
-//   .then((values) => {
-//     console.log('estoy en then,creo :(', values[0].size);
-//   })
-//   .catch((reason) => {
-//     console.log(reason);
-//   });
