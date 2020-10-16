@@ -6,6 +6,8 @@ import { listenAllDocs } from '../API/crud';
 
 function Client() {
   const [rowData, setRowData] = useState([]);
+  const [category, setCategory] = useState('Todos');
+  const newRowData = rowData.filter((obj) => obj.auditUnit === category);
 
   useEffect(() => {
     listenAllDocs(setRowData);
@@ -13,8 +15,8 @@ function Client() {
   return (
     <main className="paddTop">
       <h1>Recomendaciones de Control</h1>
-      <RecoDetails />
-      <TabWrapper rowData={rowData} />
+      <RecoDetails category={category} setCategory={setCategory} />
+      <TabWrapper rowData={newRowData} />
     </main>
   );
 }
