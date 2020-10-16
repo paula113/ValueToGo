@@ -2,43 +2,36 @@ import firebase from '../firebase.config';
 
 const dataFsli = [
   {
-    name: 'Acounts payable',
+    name: 'Payable',
+    Total: 1,
+  },
+
+  {
+    name: 'Accruals',
     Total: 1,
   },
   {
-    name: 'Acounts receivable, Allowance for doubtful accounts',
+    name: 'Risk',
     Total: 1,
   },
   {
-    name: 'Accruals, provisions and other liabilities',
-    Total: 1,
-  },
-  {
-    name: 'Cash and cash equivalents',
-    Total: 1,
-  },
-  {
-    name: 'Fraud risk',
-    Total: 1,
-  },
-  {
-    name: 'Income taxes, Income tax expense',
+    name: 'Income',
     Total: 3,
   },
   {
-    name: 'Notes receivable',
+    name: 'Notes',
     Total: 1,
   },
   {
-    name: 'Planning Activities',
+    name: 'Activities',
     Total: 1,
   },
   {
-    name: 'Property, plat and equipment, Depreciation expense',
+    name: 'Expenses',
     Total: 5,
   },
   {
-    name: 'Salaries/payroll expense',
+    name: 'Payroll',
     Total: 10,
   },
 ];
