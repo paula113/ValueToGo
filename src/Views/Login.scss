@@ -4,104 +4,114 @@
 .login-main {
   background-color: $BackgroundLight;
   height: 100vh;
-  // .MuiContainer-root {
-    width: 45rem;
-    border: 2px solid $BorderForm;
-    border-radius: 11px;
-    padding: 0;
-    height: 46rem;
-    background: #fff;
-    position: relative;
-    top: 6rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    .form-login {
-      background-color: $white;
-      .content-logo {
-        width: 39%;
-        height: 200px;
-        margin: 0 auto;
-        margin-top: 4rem;
-        .alg-center {
-          text-align: center;
-          font-size: 24px;
-          letter-spacing: 0.025em;
-          // font-family: Helvetica 65 Medium;
-          margin-top: 27px;
-        }
+  // position: relative;
+  // z-index: 14;
+  .form-login {
+    background-color: $white;
+    width: 40%;
+    padding-bottom: 1rem;
+    // height: 10rem;
+    margin: 0 auto;
+    .content-logo {
+      // width: 39%;
+      height: 200px;
+      margin: 0 auto;
+      margin-top: 4rem;
+      img {
+        margin: 0 5rem;
       }
-      .user-role {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 3rem;
-        .user-button {
-          width: 19rem;
-          padding: 0.5rem 0.5rem;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          font-size: 24px;
-          cursor: pointer;
+      .alg-center {
+        text-align: center;
+        // font-size: 1rem;
+        letter-spacing: 0.025em;
+        // font-family: Helvetica 65 Medium;
+        margin-top: 27px;
+      }
+    }
+    .user-role {
+      display: flex;
+      justify-content: space-evenly;
+      // margin-bottom: 3rem;
+      .user-button {
+        width: 19rem;
+        padding: 0.5rem 0.5rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        cursor: pointer;
 
-          &:focus {
-            border-bottom: 4px solid #e0301e;
-          }
-        }
-      }
-      .container-form {
-        width: 39%;
-        margin: 0 auto;
-        .text-label {
-          font-size: 18px;
-          color: #4f4f4f;
-          margin: 1rem 0;
-        }
-        .input-form {
-          width: 90%;
-          padding: 1rem 1rem;
-          border: none;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-          outline: none;
-          &:hover {
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.14), 0 2px 2px rgba(0, 0, 0, 0.12);
-          }
-          &::placeholder {
-            color: #7d7d7d;
-            font-size: 1.2em;
-          }
-        }
-        .login-button:disabled {
-          border: none;
-          outline: none;
-          border-radius: 5px;
-          background-color: #bdbdbd;
-          width: 100%;
-          padding: 0.5rem 0.5rem;
-          color: $white;
-          margin: 2rem 0;
-          padding: 1rem 0;
-          font-size: 16px;
-        }
-        .login-button:enabled {
-          border: none;
-          outline: none;
-          border-radius: 5px;
-          background: #d04a02;
-          width: 100%;
-          padding: 0.5rem 0.5rem;
-          color: $white;
-          margin: 2rem 0;
-          padding: 1rem 0;
-          font-size: 16px;
-          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-        }
-        a {
-          margin-left: 3.5rem;
-          font-size: 18px;
-          color: #4f95ff;
+        &:focus {
+          border-bottom: 4px solid #e0301e;
         }
       }
     }
+    .container-form {
+      width: 39%;
+      margin: 0 auto;
+      .text-label {
+        font-size: 18px;
+        color: #4f4f4f;
+        margin: 1rem 0;
+      }
+      .input-form {
+        width: 90%;
+        padding: 1rem 1rem;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        outline: none;
+        &:hover {
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.14), 0 2px 2px rgba(0, 0, 0, 0.12);
+        }
+        &::placeholder {
+          color: #7d7d7d;
+          font-size: 1.2em;
+        }
+      }
+      .login-button:disabled {
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: #bdbdbd;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        color: $white;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        font-size: 16px;
+      }
+      .login-button:enabled {
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background: #d04a02;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        color: $white;
+        margin: 2rem 0;
+        padding: 1rem 0;
+        font-size: 16px;
+        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+      }
+      a {
+        // margin-left: 3.5rem;
+        font-size: 1rem;
+        color: #4f95ff;
+      }
+    }
+  }
+  // .MuiContainer-root {
+  //   width: 45rem;
+  //   border: 2px solid $BorderForm;
+  //   border-radius: 11px;
+  //   padding: 0;
+  //   height: 46rem;
+  //   background: #fff;
+  //   position: relative;
+  //   top: 6rem;
+  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
   // }
 }
 
