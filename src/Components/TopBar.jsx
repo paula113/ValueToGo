@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TopBar.scss';
 // import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
 import { AccountCircle, Notifications } from '@material-ui/icons';
@@ -9,15 +9,17 @@ import quickValue from '../Assets/quickValue.png';
 import { auth } from '../firebase.config';
 
 function TopBar() {
-  const signOut = () =>
-    auth
-      .signOut()
-      .then(function () {
-        // Sign-out successful.
-      })
-      .catch(function (error) {
-        // An error happened.
-      });
+  useEffect(() => {
+    const signOut = () =>
+      auth
+        .signOut()
+        .then(function () {
+          // Sign-out successful.
+        })
+        .catch(function (error) {
+          // An error happened.
+        });
+  }, []);
   return (
     <header>
       <nav className="topbar-nav">
