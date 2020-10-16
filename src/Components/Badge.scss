@@ -1,16 +1,24 @@
+@import '../variables';
+
 .badge {
   text-align: center;
+  width: 90px;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  color: $BackgroundLight;
+  font-size: 16px;
 }
 .badge--Pendiente {
   // width: ;
-  background-color: #fe7466;
+  background-color: $Yellow;
 }
 .badge--Rechazado {
-  background-color: #23a31e;
+  background-color: $Red;
 }
 .badge--Aceptado {
-  background-color: #d8cc1d;
+  background-color: $Green;
 }
 .badge--Proceso {
-  background-color: #66acfe;
+  background-color: $Blue;
 }

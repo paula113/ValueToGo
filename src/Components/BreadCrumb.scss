@@ -1,0 +1,18 @@
+@import '../variables';
+@import '../App.scss';
+
+.breadcrumb {
+  display: inline;
+
+  list-style: none;
+  margin-bottom: 1rem;
+  .iconBack {
+    height: 1rem;
+  }
+  li {
+    display: inline;
+    font-size: 1rem;
+    margin: 0.3rem;
+    color: $MediumGrey;
+  }
+}

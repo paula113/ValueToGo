@@ -1,6 +1,6 @@
-// import data from './data';
 import firebase from '../firebase.config';
 
+const time = firebase.firestore.Timestamp.fromDate(new Date());
 const publishData = (obj) =>
   firebase
     .firestore()
@@ -22,22 +22,40 @@ const sendCCI = (arr) => {
   });
 };
 
-const getADocument = (docID) => {
-  const docRef = firebase.firestore().collection('puntosDeControl').doc(docID);
-
-  docRef
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        console.log('Document data:', doc.data());
-      } else {
-        // doc.data() will be undefined in this case
-        console.log('No such document!');
-      }
+const createComment = (obj) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    .doc()
+    .set(obj)
+    .then(() => {
+      console.log('se envio el comentario');
     })
     .catch((error) => {
-      console.log('Error getting document:', error);
+      console.log('Ocurrió un error al enviar tu comentario', error);
     });
+const getComments = (callback) =>
+  firebase
+    .firestore()
+    .collection('comentarios')
+    // .where('id', '==', id)
+    .orderBy('date', 'asc')
+    .onSnapshot((querySnapshot) => {
+      const comments = [];
+      querySnapshot.forEach((doc) => {
+        const objComment = {
+          content: doc.data().content,
+          id: doc.data().id,
+          user: doc.data().user,
+        };
+        comments.push(objComment);
+      });
+      callback(comments);
+    });
+
+const getADocument = (docID, collectionName) => {
+  const docRef = firebase.firestore().collection(collectionName).doc(docID);
+  return docRef.get();
 };
 const getAllDocuments = () => {
   firebase
@@ -77,60 +95,14 @@ const updateCCI = (value) => {
       console.error('Error updating document: ', error);
     });
 };
-export { sendCCI, getADocument, updateCCI, getAllDocuments, listenAllDocs };
+export {
+  sendCCI,
+  createComment,
+  getComments,
+  getADocument,
+  updateCCI,
+  getAllDocuments,
+  listenAllDocs,
+  time,
+};
 
-// const rowData = [
-//   {
-//     title:
-//       'La compañia no cuenta formalizado en actas la distribución de dividendos',
-//     description:
-//       'La compañia no cuenta formalizado en actas la distribución de dividendos',
-//     fsli: 'Share capital and other equity accounts',
-//     auditUnit: 'Empresa B1',
-//     finalConclusionOnSeverity: 'Deficiency in Internal Control',
-//     status: 'Pendiente',
-//     recomendation: 'Ver recomendaciones',
-//   },
-//   {
-//     title: 'Formalización del termino de contrato',
-//     description:
-//       'La compañia no ha formalizado la terminación del contrato en el cual indicaban que la renta ascendia a US$60,000.',
-//     fsli: 'Revenue',
-//     auditUnit: 'Empresa B1',
-//     finalConclusionOnSeverity: 'Deficiency in Internal Control',
-//     status: 'Rechazado',
-//     recomendation: 'Ver recomendaciones',
-//   },
-//   {
-//     title:
-//       'La compañia no ha formalizado el reparto de dividendos por US$ 26 millones',
-//     description:
-//       'La compañia no ha formalizado el reparto de dividendos por US$ 26 millones',
-//     fsli: 'Share capital and other equity accounts',
-//     auditUnit: 'Empresa B2',
-//     finalConclusionOnSeverity: 'Deficiency in Internal Control',
-//     status: 'Aceptado',
-//     recomendation: 'Ver recomendaciones',
-//   },
-//   {
-//     title: 'Partidas conciliatorias mayores a 1 año',
-//     description:
-//       'Se identificó en la conciliación bancaria del Banco de la Nación que existen partidas conciliatorias mayor a 1 año correspondientes a depósitos no contabilizados',
-//     fsli: 'Cash and cash equivalents',
-//     auditUnit: 'Empresa B3',
-//     finalConclusionOnSeverity: 'Deficiency in Internal Control',
-//     status: 'Proceso',
-//     recomendation: 'Ver recomendaciones',
-//   },
-//   {
-//     title:
-//       'Personal cesado cuenta con autorización para firma en las entidades bancarias',
-//     description:
-//       'Se identificó personas que fueron confirmadas por el banco que no se encontraban en el listado de firmantes de la compañía (Banco BBVA) al 31/12/2018',
-//     fsli: 'Cash and cash equivalents',
-//     auditUnit: 'Empresa B3',
-//     finalConclusionOnSeverity: 'Deficiency in Internal Control',
-//     status: 'Pendiente',
-//     recomendation: 'Ver recomendaciones',
-//   },
-// ];

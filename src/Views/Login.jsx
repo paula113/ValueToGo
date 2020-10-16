@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-// import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-// import FormControl from '@material-ui/core/FormControl';
 import './Login.scss';
 import { signIn } from '../API/auth';
+import logoQuick from '../Assets/logo-quick-value.svg';
 
 const Login = () => {
   const history = useHistory();
@@ -16,39 +10,22 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [empresas, setEmpresas] = React.useState('EUR');
-  const handleChange = (event) => {
-    setEmpresas(event.target.value);
-  };
-
-  const empresa = [
-    {
-      value: 'EmpresaA',
-      label: 'Empresa A',
-    },
-    {
-      value: 'EmpresaB',
-      label: 'Empresa B',
-    },
-    {
-      value: 'EmpresaC',
-      label: 'Empresa C',
-    },
-  ];
-
   const loginSubmit = (event) => {
     event.preventDefault();
     switch (view) {
       case 'col-price':
         signIn(email, password)
-          .then(() => {
+          .then((res) => {
             localStorage.clear();
             localStorage.setItem('user', email);
+            console.log(res);
             history.push('/gerente');
           })
           .catch((err) => console.log(err));
         break;
       case 'client':
+        console.log(email);
+        console.log(password);
         signIn(email, password)
           .then(() => {
             localStorage.clear();
@@ -64,6 +41,8 @@ const Login = () => {
   return (
     <main className="login-main">
       <form action="" className="" onSubmit={loginSubmit}>
+        <img className="logo-image" src={logoQuick} alt="Logo de Quick value" />
+        <span className="alg-center">Seleccione por favor</span>
         <div className="user-role">
           <button
             className="user-button"
@@ -80,44 +59,25 @@ const Login = () => {
             Cliente
           </button>
         </div>
-
-        <TextField
-          id="standard-select-currency"
-          select
-          label="Empresa"
-          value={empresas}
-          onChange={handleChange}
-          helperText="Seleciona Empresa"
-        >
-          {empresa.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          id="standard-basic"
-          label="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          id="standard-basic"
-          label="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {/* <input
-          onChange={}
-          type="email"
-          name="email"
-          placeholder="Email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          name="passsword"
-          placeholder="Password"
-        /> */}
-        <button type="submit">Login</button>
+        <div className="container-input-form">
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            name="email"
+            placeholder="ejemplo@ejemplo.com"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            name="passsword"
+            placeholder="password"
+          />
+          <button type="submit" className="Login-button">
+            Ingresar
+          </button>
+        </div>
       </form>
     </main>
   );
