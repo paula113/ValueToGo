@@ -13,12 +13,10 @@
     // height: 10rem;
     margin: 0 auto;
     .content-logo {
-      // width: 39%;
       height: 200px;
-      margin: 0 auto;
       margin-top: 4rem;
       img {
-        margin: 0 5rem;
+        margin: 13px 121px;
       }
       .alg-center {
         text-align: center;
@@ -42,6 +40,9 @@
         cursor: pointer;
 
         &:focus {
+          border-bottom: 4px solid #e0301e;
+        }
+        &:hover {
           border-bottom: 4px solid #e0301e;
         }
       }
@@ -95,9 +96,9 @@
         transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
       }
       a {
-        // margin-left: 3.5rem;
         font-size: 1rem;
         color: #4f95ff;
+        margin-left: 2.5rem;
       }
     }
   }
