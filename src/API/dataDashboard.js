@@ -6,7 +6,7 @@ const dataFsli = [
     Total: 1,
   },
   {
-    name: 'Received',
+    name: 'Taken',
     Total: 1,
   },
   {
