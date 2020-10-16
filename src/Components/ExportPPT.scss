@@ -1,20 +1,19 @@
 @import '../App.scss';
 @import '../variables';
 
-.container-cci-download{
-    width: 350px;
-    height: 35px;
-    border: 1px solid $DarkGrey;
-    border-radius: 5px;
-    display: flex;
-    margin-top: 1.2rem;
-    padding: 0.5rem;
-    justify-content: space-between;
-    align-items: center;
+.container-cci-download {
+  width: 350px;
+  height: 35px;
+  border: 1px solid $DarkGrey;
+  border-radius: 5px;
+  display: flex;
+  margin-top: 1.2rem;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
-.button-download-cci{
-    background-color: transparent;
-    border: none;
-    justify-self: flex-end;
+.button-download-cci {
+  background-color: transparent;
+  border: none;
+  justify-self: flex-end;
 }
-

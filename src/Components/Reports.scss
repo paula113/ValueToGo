@@ -1,7 +1,11 @@
 @import '../variables';
-@import '../App.scss'; 
+@import '../App.scss';
 
-.container-reports{
-    display: flex;
-    justify-content: space-around;
+.container-reports {
+  display: flex;
+  justify-content: space-around;
+  .card-reports {
+    background-color: $white;
+    padding: 2rem 3rem;
+  }
 }

@@ -18,13 +18,12 @@ const Reports = () => {
 
   return (
     <div className="container-reports">
-      <div>
-        <div className="details-info-title">Reportes de Recomendación</div>
-
+      <div className="card-reports">
+        <p className="details-info-title">Reportes de Recomendación</p>
         <Export años={años} />
       </div>
-      <div>
-        <div className="details-info-title">Otros Reportes</div>
+      <div className="card-reports">
+        <p className="details-info-title">Otros Reportes</p>
         <Export años={other} />
       </div>
     </div>
