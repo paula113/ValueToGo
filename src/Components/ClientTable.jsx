@@ -9,16 +9,17 @@ import {
   TableRow,
 } from '@material-ui/core/';
 import { Link } from 'react-router-dom';
-import { listenAllDocs } from '../API/crud';
+// import { listenAllDocs } from '../API/crud';
 import Badge from './Badge';
 import './ClientTable.scss';
 
-function ClientTable() {
-  const [rowData, setRowData] = useState([]);
+function ClientTable(props) {
+  const { rowData } = props;
+  // const [rowData, setRowData] = useState([]);
 
-  useEffect(() => {
-    listenAllDocs(setRowData);
-  }, []);
+  // useEffect(() => {
+  //   listenAllDocs(setRowData);
+  // }, []);
   const headerColumn = [
     {
       id: '01',

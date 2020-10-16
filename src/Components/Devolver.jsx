@@ -14,8 +14,11 @@ export default function Devolver(props) {
     setComment({ ...comment, [name]: value });
   };
   const sendComment = (obj) => {
-    createComment(obj);
-    setComment({ ...initialComment });
+    if (obj.content != '') {
+      createComment(obj);
+      setComment({ ...initialComment });
+    }
+    console.log(' no content');
   };
   const handleImageUpload = (e) => {
     const [file] = e.target.files;
@@ -24,7 +27,6 @@ export default function Devolver(props) {
     }
   };
 
-  // console.log(commentBox);
   return (
     <>
       {/* <h2>Devolver</h2> */}
@@ -42,7 +44,7 @@ export default function Devolver(props) {
         {/* <HistoryComments commentBox={commentBox} /> */}
         <section className="devolver-chat-send">
           <textarea
-            id=""
+            value={comment.content}
             cols="30"
             placeholder="Escribe un comentario"
             name="content"
